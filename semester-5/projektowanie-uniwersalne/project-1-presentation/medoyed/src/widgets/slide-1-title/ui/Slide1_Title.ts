@@ -1,7 +1,8 @@
 import PptxGenJS from "pptxgenjs";
 
 import type { TitleSlideDataTypes } from "../config/types/types";
-import type { Position } from "../config/types/types";
+// import type { Position } from "../config/types/types";
+import type { Position } from "@shared/types/types";
 
 // /**
 //  * Інтерфейс для даних титульного слайду

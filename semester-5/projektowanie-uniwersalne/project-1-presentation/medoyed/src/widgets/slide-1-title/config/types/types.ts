@@ -8,13 +8,3 @@ export interface TitleSlideDataTypes {
   photoPath?: string;
   photoAltText?: string;
 }
-
-/**
- * Типи для позиціонування елементів на слайді
- */
-export interface Position {
-  x: number;
-  y: number;
-  w: number;
-  h: number;
-}

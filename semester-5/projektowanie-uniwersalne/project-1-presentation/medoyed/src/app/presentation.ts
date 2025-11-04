@@ -1,8 +1,6 @@
 import PptxGenJS from "pptxgenjs";
-import { createSlide1 } from "@widgets/slide-1-title/ui/Slide1_Title";
-// import type { TitleSlideData } from "@widgets/slide-1-title/ui/Slide1_Title";
-// import { TitleSlideData } from "@widgets/slide-1-title/ui/Slide1_Title";
 
+import { createSlide1 } from "@widgets/slide-1-title/ui/Slide1_Title";
 import { titleSlideData } from "@widgets/slide-1-title/config/constants/titleSlideData";
 
 import { createSlide2 } from "@widgets/Slide2_About";
