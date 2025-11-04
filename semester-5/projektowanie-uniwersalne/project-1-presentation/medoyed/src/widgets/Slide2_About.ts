@@ -1,4 +1,6 @@
 import PptxGenJS from "pptxgenjs";
+import { HobbyImg } from "@shared/assets/img";
+import { imageToBase64 } from "@shared/lib/imageToBase64";
 
 export function createSlide2(pres: PptxGenJS): void {
   const slide = pres.addSlide();
@@ -15,16 +17,16 @@ export function createSlide2(pres: PptxGenJS): void {
     fontSize: 32,
     bold: true,
     color: "000000",
-    fontFace: "Arial"
+    fontFace: "Arial",
   });
 
   // Основний текст з інформацією
   const aboutText = [
-    "• Ім'я: Максим [Прізвище]",
-    "• Вік: [Твій вік]",
-    "• Місто: [Твоє місто]",
+    "• Ім'я: Максим Мокряков",
+    "• Вік: 20 років",
+    "• Місто: Łódź",
     "• Напрямок: Інформаційні технології",
-    "• Захоплення: програмування, [інші хоббі]"
+    "• Захоплення: програмування, стрільба з луку",
   ];
 
   slide.addText(aboutText.join("\n"), {
@@ -36,29 +38,43 @@ export function createSlide2(pres: PptxGenJS): void {
     color: "333333",
     lineSpacing: 32,
     fontFace: "Arial",
-    valign: "top"
+    valign: "top",
   });
 
-  // Іконка або декоративний елемент
-  slide.addText("👤", {
-    x: 8.5,
-    y: 1.5,
-    w: 1,
-    h: 1,
-    fontSize: 48,
-    align: "center"
-  });
+  // Перша картинка (праворуч вгорі)
+  const image1 = imageToBase64(HobbyImg);
+  if (image1) {
+    slide.addImage({
+      data: image1,
+      x: 8,
+      y: 1,
+      w: 1.5,
+      h: 1.5,
+    });
+  }
 
-  // Додатковий опис (можна змінити)
-  slide.addText("Студент з великою пристрастю до технологій та розробки програмного забезпечення", {
+  // Друга картинка (праворуч внизу)
+  const image2 = imageToBase64(HobbyImg);
+  if (image2) {
+    slide.addImage({
+      data: image2,
+      x: 8,
+      y: 3,
+      w: 1.5,
+      h: 1.5,
+    });
+  }
+
+  // Додатковий опис
+  slide.addText("Цікавлюсь технологіями та розробкою програмного забезпечення", {
     x: 1,
-    y: 4.8,
-    w: 8,
+    y: 4.4,
+    w: 6.5,
     h: 0.8,
     fontSize: 16,
     color: "666666",
     italic: true,
     fontFace: "Arial",
-    align: "center"
+    align: "center",
   });
 }
