@@ -1,5 +1,10 @@
 import PptxGenJS from "pptxgenjs";
-import { createSlide1 } from "@widgets/Slide1_Title";
+import { createSlide1 } from "@widgets/slide-1-title/ui/Slide1_Title";
+// import type { TitleSlideData } from "@widgets/slide-1-title/ui/Slide1_Title";
+// import { TitleSlideData } from "@widgets/slide-1-title/ui/Slide1_Title";
+
+import { titleSlideData } from "@widgets/slide-1-title/config/constants/titleSlideData";
+
 import { createSlide2 } from "@widgets/Slide2_About";
 import { createSlide3 } from "@widgets/Slide3_Education";
 import { createSlide4 } from "@widgets/Slide4_Hobbies";
@@ -20,7 +25,7 @@ pres.title = "Моя презентація";
 
 // Створення всіх слайдів
 console.log("📄 Створення слайду 1: Титульний слайд");
-createSlide1(pres);
+createSlide1(pres, titleSlideData);
 
 console.log("📄 Створення слайду 2: Про мене");
 createSlide2(pres);
