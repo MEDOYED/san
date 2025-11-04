@@ -16,7 +16,7 @@ export function createSlide8(pres: PptxGenJS): void {
     bold: true,
     color: "000000",
     align: "center",
-    fontFace: "Arial"
+    fontFace: "Arial",
   });
 
   // Блок контактів
@@ -26,7 +26,7 @@ export function createSlide8(pres: PptxGenJS): void {
     w: 6,
     h: 2.5,
     fill: { color: "F5F5F5" },
-    line: { color: "CCCCCC", width: 1 }
+    line: { color: "CCCCCC", width: 1 },
   });
 
   // Email
@@ -38,7 +38,7 @@ export function createSlide8(pres: PptxGenJS): void {
     fontSize: 18,
     bold: true,
     color: "000000",
-    fontFace: "Arial"
+    fontFace: "Arial",
   });
 
   slide.addText("[твій.email@example.com]", {
@@ -48,7 +48,7 @@ export function createSlide8(pres: PptxGenJS): void {
     h: 0.4,
     fontSize: 16,
     color: "333333",
-    fontFace: "Arial"
+    fontFace: "Arial",
   });
 
   // GitHub
@@ -60,7 +60,7 @@ export function createSlide8(pres: PptxGenJS): void {
     fontSize: 18,
     bold: true,
     color: "000000",
-    fontFace: "Arial"
+    fontFace: "Arial",
   });
 
   slide.addText("github.com/[твій-username]", {
@@ -70,7 +70,7 @@ export function createSlide8(pres: PptxGenJS): void {
     h: 0.4,
     fontSize: 16,
     color: "333333",
-    fontFace: "Arial"
+    fontFace: "Arial",
   });
 
   // LinkedIn
@@ -82,7 +82,7 @@ export function createSlide8(pres: PptxGenJS): void {
     fontSize: 18,
     bold: true,
     color: "000000",
-    fontFace: "Arial"
+    fontFace: "Arial",
   });
 
   slide.addText("linkedin.com/in/[твій-профіль]", {
@@ -92,7 +92,7 @@ export function createSlide8(pres: PptxGenJS): void {
     h: 0.4,
     fontSize: 16,
     color: "333333",
-    fontFace: "Arial"
+    fontFace: "Arial",
   });
 
   // Телефон (опціонально)
@@ -104,7 +104,7 @@ export function createSlide8(pres: PptxGenJS): void {
     fontSize: 18,
     bold: true,
     color: "000000",
-    fontFace: "Arial"
+    fontFace: "Arial",
   });
 
   slide.addText("[+XX XXX XXX XXX]", {
@@ -114,7 +114,7 @@ export function createSlide8(pres: PptxGenJS): void {
     h: 0.4,
     fontSize: 16,
     color: "333333",
-    fontFace: "Arial"
+    fontFace: "Arial",
   });
 
   // Заключна фраза
@@ -127,18 +127,6 @@ export function createSlide8(pres: PptxGenJS): void {
     bold: true,
     color: "000000",
     align: "center",
-    fontFace: "Arial"
-  });
-
-  slide.addText("Відкритий до співпраці та нових можливостей", {
-    x: 2,
-    y: 5.6,
-    w: 6,
-    h: 0.4,
-    fontSize: 16,
-    color: "666666",
-    italic: true,
-    align: "center",
-    fontFace: "Arial"
+    fontFace: "Arial",
   });
 }
