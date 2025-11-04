@@ -1,0 +1,144 @@
+import PptxGenJS from "pptxgenjs";
+
+export function createSlide8(pres: PptxGenJS): void {
+  const slide = pres.addSlide();
+
+  // Білий фон
+  slide.background = { color: "FFFFFF" };
+
+  // Заголовок
+  slide.addText("Контакти", {
+    x: 0.5,
+    y: 0.8,
+    w: 9,
+    h: 0.7,
+    fontSize: 36,
+    bold: true,
+    color: "000000",
+    align: "center",
+    fontFace: "Arial"
+  });
+
+  // Блок контактів
+  slide.addShape("rect", {
+    x: 2,
+    y: 2,
+    w: 6,
+    h: 2.5,
+    fill: { color: "F5F5F5" },
+    line: { color: "CCCCCC", width: 1 }
+  });
+
+  // Email
+  slide.addText("📧 Email:", {
+    x: 2.5,
+    y: 2.3,
+    w: 2,
+    h: 0.4,
+    fontSize: 18,
+    bold: true,
+    color: "000000",
+    fontFace: "Arial"
+  });
+
+  slide.addText("[твій.email@example.com]", {
+    x: 4.5,
+    y: 2.3,
+    w: 3,
+    h: 0.4,
+    fontSize: 16,
+    color: "333333",
+    fontFace: "Arial"
+  });
+
+  // GitHub
+  slide.addText("💻 GitHub:", {
+    x: 2.5,
+    y: 2.9,
+    w: 2,
+    h: 0.4,
+    fontSize: 18,
+    bold: true,
+    color: "000000",
+    fontFace: "Arial"
+  });
+
+  slide.addText("github.com/[твій-username]", {
+    x: 4.5,
+    y: 2.9,
+    w: 3,
+    h: 0.4,
+    fontSize: 16,
+    color: "333333",
+    fontFace: "Arial"
+  });
+
+  // LinkedIn
+  slide.addText("🔗 LinkedIn:", {
+    x: 2.5,
+    y: 3.5,
+    w: 2,
+    h: 0.4,
+    fontSize: 18,
+    bold: true,
+    color: "000000",
+    fontFace: "Arial"
+  });
+
+  slide.addText("linkedin.com/in/[твій-профіль]", {
+    x: 4.5,
+    y: 3.5,
+    w: 3,
+    h: 0.4,
+    fontSize: 16,
+    color: "333333",
+    fontFace: "Arial"
+  });
+
+  // Телефон (опціонально)
+  slide.addText("📱 Телефон:", {
+    x: 2.5,
+    y: 4.1,
+    w: 2,
+    h: 0.4,
+    fontSize: 18,
+    bold: true,
+    color: "000000",
+    fontFace: "Arial"
+  });
+
+  slide.addText("[+XX XXX XXX XXX]", {
+    x: 4.5,
+    y: 4.1,
+    w: 3,
+    h: 0.4,
+    fontSize: 16,
+    color: "333333",
+    fontFace: "Arial"
+  });
+
+  // Заключна фраза
+  slide.addText("Дякую за увагу!", {
+    x: 2,
+    y: 5,
+    w: 6,
+    h: 0.6,
+    fontSize: 24,
+    bold: true,
+    color: "000000",
+    align: "center",
+    fontFace: "Arial"
+  });
+
+  slide.addText("Відкритий до співпраці та нових можливостей", {
+    x: 2,
+    y: 5.6,
+    w: 6,
+    h: 0.4,
+    fontSize: 16,
+    color: "666666",
+    italic: true,
+    align: "center",
+    fontFace: "Arial"
+  });
+}
