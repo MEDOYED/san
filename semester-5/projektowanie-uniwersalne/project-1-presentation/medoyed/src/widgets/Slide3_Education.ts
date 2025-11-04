@@ -15,7 +15,7 @@ export function createSlide3(pres: PptxGenJS): void {
     fontSize: 32,
     bold: true,
     color: "000000",
-    fontFace: "Arial"
+    fontFace: "Arial",
   });
 
   // Основний блок з інформацією про університет
@@ -25,7 +25,7 @@ export function createSlide3(pres: PptxGenJS): void {
     w: 8,
     h: 1.5,
     fill: { color: "F0F0F0" },
-    line: { color: "CCCCCC", width: 1 }
+    line: { color: "CCCCCC", width: 1 },
   });
 
   slide.addText("🎓 Університет", {
@@ -36,7 +36,7 @@ export function createSlide3(pres: PptxGenJS): void {
     fontSize: 20,
     bold: true,
     color: "000000",
-    fontFace: "Arial"
+    fontFace: "Arial",
   });
 
   slide.addText("[Назва твого університету]", {
@@ -46,7 +46,7 @@ export function createSlide3(pres: PptxGenJS): void {
     h: 0.3,
     fontSize: 18,
     color: "333333",
-    fontFace: "Arial"
+    fontFace: "Arial",
   });
 
   slide.addText("Факультет: [Твій факультет]", {
@@ -56,7 +56,7 @@ export function createSlide3(pres: PptxGenJS): void {
     h: 0.3,
     fontSize: 16,
     color: "666666",
-    fontFace: "Arial"
+    fontFace: "Arial",
   });
 
   // Напрямок навчання
@@ -66,7 +66,7 @@ export function createSlide3(pres: PptxGenJS): void {
     w: 8,
     h: 1.2,
     fill: { color: "F8F8F8" },
-    line: { color: "CCCCCC", width: 1 }
+    line: { color: "CCCCCC", width: 1 },
   });
 
   slide.addText("📚 Спеціальність", {
@@ -77,7 +77,7 @@ export function createSlide3(pres: PptxGenJS): void {
     fontSize: 20,
     bold: true,
     color: "000000",
-    fontFace: "Arial"
+    fontFace: "Arial",
   });
 
   slide.addText("Інформаційні технології / Комп'ютерні науки", {
@@ -87,18 +87,18 @@ export function createSlide3(pres: PptxGenJS): void {
     h: 0.3,
     fontSize: 16,
     color: "333333",
-    fontFace: "Arial"
+    fontFace: "Arial",
   });
 
   // Курс та рік
-  slide.addText("• Курс: [X] курс\n• Рік вступу: [202X]\n• Очікуваний рік випуску: [202X]", {
+  slide.addText("• Курс: [X] курс   • Рік вступу: [202X]   • Очікуваний рік випуску: [202X]", {
     x: 1,
-    y: 4.8,
+    y: 4.5,
     w: 8,
     h: 1,
     fontSize: 16,
     color: "333333",
     lineSpacing: 24,
-    fontFace: "Arial"
+    fontFace: "Arial",
   });
 }
