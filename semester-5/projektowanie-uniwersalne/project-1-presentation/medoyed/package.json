@@ -6,9 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
-    "start": "node dist/presentation.js",
-    "dev": "ts-node src/app/presentation.ts",
-    "watch": "nodemon --exec ts-node src/app/presentation.ts"
+    "start": "node -r tsconfig-paths/register dist/app/presentation.js",
+    "dev": "ts-node -r tsconfig-paths/register src/app/presentation.ts",
+    "watch": "nodemon --exec ts-node -r tsconfig-paths/register src/app/presentation.ts"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +20,7 @@
   "devDependencies": {
     "@types/node": "^24.10.0",
     "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
     "typescript": "^5.9.3"
   }
 }
