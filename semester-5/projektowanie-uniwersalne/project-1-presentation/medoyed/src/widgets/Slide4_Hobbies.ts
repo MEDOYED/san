@@ -15,7 +15,7 @@ export function createSlide4(pres: PptxGenJS): void {
     fontSize: 32,
     bold: true,
     color: "000000",
-    fontFace: "Arial"
+    fontFace: "Arial",
   });
 
   // Хоббі 1
@@ -25,7 +25,7 @@ export function createSlide4(pres: PptxGenJS): void {
     w: 4,
     h: 1.5,
     fill: { color: "E8F5E9" },
-    line: { color: "4CAF50", width: 2 }
+    line: { color: "4CAF50", width: 2 },
   });
 
   slide.addText("🎮 [Хоббі 1]", {
@@ -36,7 +36,7 @@ export function createSlide4(pres: PptxGenJS): void {
     fontSize: 20,
     bold: true,
     color: "000000",
-    fontFace: "Arial"
+    fontFace: "Arial",
   });
 
   slide.addText("[Опис хоббі - наприклад: геймінг, стратегічні ігри, кіберспорт]", {
@@ -46,38 +46,7 @@ export function createSlide4(pres: PptxGenJS): void {
     h: 0.7,
     fontSize: 14,
     color: "333333",
-    fontFace: "Arial"
-  });
-
-  // Хоббі 2
-  slide.addShape("rect", {
-    x: 5.2,
-    y: 1.5,
-    w: 4,
-    h: 1.5,
-    fill: { color: "E3F2FD" },
-    line: { color: "2196F3", width: 2 }
-  });
-
-  slide.addText("⚽ [Хоббі 2]", {
-    x: 5.4,
-    y: 1.7,
-    w: 3.6,
-    h: 0.4,
-    fontSize: 20,
-    bold: true,
-    color: "000000",
-    fontFace: "Arial"
-  });
-
-  slide.addText("[Опис хоббі - наприклад: спорт, футбол, фітнес]", {
-    x: 5.4,
-    y: 2.2,
-    w: 3.6,
-    h: 0.7,
-    fontSize: 14,
-    color: "333333",
-    fontFace: "Arial"
+    fontFace: "Arial",
   });
 
   // Хоббі 3
@@ -87,7 +56,7 @@ export function createSlide4(pres: PptxGenJS): void {
     w: 4,
     h: 1.5,
     fill: { color: "FFF3E0" },
-    line: { color: "FF9800", width: 2 }
+    line: { color: "FF9800", width: 2 },
   });
 
   slide.addText("📚 [Хоббі 3]", {
@@ -98,7 +67,7 @@ export function createSlide4(pres: PptxGenJS): void {
     fontSize: 20,
     bold: true,
     color: "000000",
-    fontFace: "Arial"
+    fontFace: "Arial",
   });
 
   slide.addText("[Опис хоббі - наприклад: читання, навчання нового, технічна література]", {
@@ -108,50 +77,19 @@ export function createSlide4(pres: PptxGenJS): void {
     h: 0.7,
     fontSize: 14,
     color: "333333",
-    fontFace: "Arial"
-  });
-
-  // Хоббі 4
-  slide.addShape("rect", {
-    x: 5.2,
-    y: 3.3,
-    w: 4,
-    h: 1.5,
-    fill: { color: "F3E5F5" },
-    line: { color: "9C27B0", width: 2 }
-  });
-
-  slide.addText("🎵 [Хоббі 4]", {
-    x: 5.4,
-    y: 3.5,
-    w: 3.6,
-    h: 0.4,
-    fontSize: 20,
-    bold: true,
-    color: "000000",
-    fontFace: "Arial"
-  });
-
-  slide.addText("[Опис хоббі - наприклад: музика, подорожі, фотографія]", {
-    x: 5.4,
-    y: 4,
-    w: 3.6,
-    h: 0.7,
-    fontSize: 14,
-    color: "333333",
-    fontFace: "Arial"
+    fontFace: "Arial",
   });
 
   // Нижній текст
   slide.addText("Мої хоббі допомагають мені розвиватися всебічно та знаходити баланс", {
     x: 1,
-    y: 5.2,
+    y: 4.9,
     w: 8,
     h: 0.5,
     fontSize: 14,
     color: "666666",
     italic: true,
     align: "center",
-    fontFace: "Arial"
+    fontFace: "Arial",
   });
 }
