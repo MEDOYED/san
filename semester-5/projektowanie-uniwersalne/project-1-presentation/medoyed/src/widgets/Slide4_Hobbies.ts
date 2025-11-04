@@ -1,4 +1,6 @@
 import PptxGenJS from "pptxgenjs";
+import { HobbyImg } from "@shared/assets/img";
+import { imageToBase64 } from "@shared/lib/imageToBase64";
 
 export function createSlide4(pres: PptxGenJS): void {
   const slide = pres.addSlide();
@@ -49,6 +51,18 @@ export function createSlide4(pres: PptxGenJS): void {
     fontFace: "Arial",
   });
 
+  // Картинка для хоббі 1
+  const image1 = imageToBase64(HobbyImg);
+  if (image1) {
+    slide.addImage({
+      data: image1,
+      x: 5.5,
+      y: 1.5,
+      w: 1.8,
+      h: 1.5,
+    });
+  }
+
   // Хоббі 3
   slide.addShape("rect", {
     x: 0.8,
@@ -79,6 +93,18 @@ export function createSlide4(pres: PptxGenJS): void {
     color: "333333",
     fontFace: "Arial",
   });
+
+  // Картинка для хоббі 3
+  const image2 = imageToBase64(HobbyImg);
+  if (image2) {
+    slide.addImage({
+      data: image2,
+      x: 5.5,
+      y: 3.3,
+      w: 1.8,
+      h: 1.5,
+    });
+  }
 
   // Нижній текст
   slide.addText("Мої хоббі допомагають мені розвиватися всебічно та знаходити баланс", {
