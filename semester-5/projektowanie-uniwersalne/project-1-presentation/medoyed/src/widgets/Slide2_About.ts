@@ -6,6 +6,9 @@ import { imageToBase64 } from "@shared/lib/imageToBase64";
 export function createSlide2(pres: PptxGenJS): void {
   const slide = pres.addSlide();
 
+  // Додаємо заголовок слайду для доступності
+  slide.slideNumber = { x: 0, y: 0 };
+
   // Білий фон
   slide.background = { color: "FFFFFF" };
 
@@ -51,6 +54,7 @@ export function createSlide2(pres: PptxGenJS): void {
       y: 1,
       w: 3.3,
       h: 2,
+      altText: "Ilustracja przedstawiająca nowoczesne technologie frontend - kolorowe ikony frameworków i narzędzi webowych",
     });
   }
 
@@ -73,7 +77,7 @@ export function createSlide2(pres: PptxGenJS): void {
     w: 6.5,
     h: 0.8,
     fontSize: 16,
-    color: "666666",
+    color: "555555",
     italic: true,
     fontFace: "Arial",
     align: "center",

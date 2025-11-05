@@ -3,6 +3,9 @@ import PptxGenJS from "pptxgenjs";
 export function createSlide8(pres: PptxGenJS): void {
   const slide = pres.addSlide();
 
+  // Додаємо заголовок слайду для доступності
+  slide.slideNumber = { x: 0, y: 0 };
+
   // Білий фон
   slide.background = { color: "FFFFFF" };
 

@@ -6,6 +6,9 @@ import { imageToBase64 } from "@shared/lib/imageToBase64";
 export function createSlide4(pres: PptxGenJS): void {
   const slide = pres.addSlide();
 
+  // Додаємо заголовок слайду для доступності
+  slide.slideNumber = { x: 0, y: 0 };
+
   // Білий фон
   slide.background = { color: "FFFFFF" };
 
@@ -61,6 +64,7 @@ export function createSlide4(pres: PptxGenJS): void {
       y: 1.5,
       w: 1.8,
       h: 1.5,
+      altText: "Zdjęcie tarcze strzelniczej z łucznictwa - widoczne kolorowe kręgi docelowe i strzały",
     });
   }
 
@@ -104,6 +108,7 @@ export function createSlide4(pres: PptxGenJS): void {
       y: 3.3,
       w: 1.8,
       h: 1.5,
+      altText: "Widok sali siłowni z hantlami i sprzętem do ćwiczeń",
     });
   }
 
@@ -114,7 +119,7 @@ export function createSlide4(pres: PptxGenJS): void {
     w: 8,
     h: 0.5,
     fontSize: 14,
-    color: "666666",
+    color: "555555",
     italic: true,
     align: "center",
     fontFace: "Arial",

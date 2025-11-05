@@ -105,8 +105,9 @@ function addProfilePhoto(
   const photoConfig = SLIDE_CONFIG.photo;
 
   if (photoPath) {
-    // Якщо є реальне фото - додаємо його
+    // Якщо є реальне фото - додаємо його з альт-текстом
     try {
+      // PptxGenJS підтримує altText через властивість об'єкта зображення
       slide.addImage({
         path: photoPath,
         x: photoConfig.position.x,
@@ -118,19 +119,9 @@ function addProfilePhoto(
           w: photoConfig.position.w,
           h: photoConfig.position.h,
         },
+        // Додаємо альтернативний текст для зображення
+        altText: altText || "Zdjęcie profilowe",
       });
-
-      // Додаємо невидимий текст для screen readers (якщо PptxGenJS підтримує)
-      if (altText) {
-        slide.addText(altText, {
-          x: photoConfig.position.x,
-          y: photoConfig.position.y,
-          w: photoConfig.position.w,
-          h: photoConfig.position.h,
-          fontSize: 1,
-          color: "FFFFFF", // Невидимий текст для доступності
-        });
-      }
     } catch (error) {
       console.error("Błąd ładowania zdjęcia:", error);
       // У випадку помилки показуємо placeholder
