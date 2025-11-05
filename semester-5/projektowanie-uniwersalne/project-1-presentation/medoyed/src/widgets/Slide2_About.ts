@@ -9,7 +9,7 @@ export function createSlide2(pres: PptxGenJS): void {
   slide.background = { color: "FFFFFF" };
 
   // Заголовок слайду
-  slide.addText("Про мене", {
+  slide.addText("O mnie", {
     x: 0.5,
     y: 0.5,
     w: 9,
@@ -22,11 +22,11 @@ export function createSlide2(pres: PptxGenJS): void {
 
   // Основний текст з інформацією
   const aboutText = [
-    "• Ім'я: Максим Мокряков",
-    "• Вік: 20 років",
-    "• Місто: Łódź",
-    "• Напрямок: Інформаційні технології",
-    "• Захоплення: програмування, стрільба з луку",
+    "• Imię: Maksym Mokriakov",
+    "• Wiek: 20 lat",
+    "• Miasto: Łódź",
+    "• Kierunek: Informatyka",
+    "• Zainteresowania: programowanie, łucznictwo",
   ];
 
   slide.addText(aboutText.join("\n"), {
@@ -66,7 +66,7 @@ export function createSlide2(pres: PptxGenJS): void {
   }
 
   // Додатковий опис
-  slide.addText("Цікавлюсь технологіями та розробкою програмного забезпечення", {
+  slide.addText("Interesuję się technologiami i tworzeniem aplikacji webowych", {
     x: 1,
     y: 4.4,
     w: 6.5,
