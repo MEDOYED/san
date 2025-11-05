@@ -9,3 +9,5 @@ import path from "path";
 
 // Експортуємо абсолютний шлях до зображення
 export const HobbyImg = path.join(__dirname, "hobby-img.png");
+export const SilowniaImg = path.join(__dirname, "silownia.png");
+export const FrontendImg = path.join(__dirname, "front-end.png");

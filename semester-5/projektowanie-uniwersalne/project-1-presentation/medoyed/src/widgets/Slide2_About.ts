@@ -1,5 +1,6 @@
 import PptxGenJS from "pptxgenjs";
 import { HobbyImg } from "@shared/assets/img";
+import { FrontendImg } from "@shared/assets/img";
 import { imageToBase64 } from "@shared/lib/imageToBase64";
 
 export function createSlide2(pres: PptxGenJS): void {
@@ -42,28 +43,28 @@ export function createSlide2(pres: PptxGenJS): void {
   });
 
   // Перша картинка (праворуч вгорі)
-  const image1 = imageToBase64(HobbyImg);
+  const image1 = imageToBase64(FrontendImg);
   if (image1) {
     slide.addImage({
       data: image1,
-      x: 8,
+      x: 5.6,
       y: 1,
-      w: 1.5,
-      h: 1.5,
+      w: 3.3,
+      h: 2,
     });
   }
 
   // Друга картинка (праворуч внизу)
-  const image2 = imageToBase64(HobbyImg);
-  if (image2) {
-    slide.addImage({
-      data: image2,
-      x: 8,
-      y: 3,
-      w: 1.5,
-      h: 1.5,
-    });
-  }
+  // const image2 = imageToBase64(HobbyImg);
+  // if (image2) {
+  //   slide.addImage({
+  //     data: image2,
+  //     x: 8,
+  //     y: 3,
+  //     w: 1.5,
+  //     h: 1.5,
+  //   });
+  // }
 
   // Додатковий опис
   slide.addText("Interesuję się technologiami i tworzeniem aplikacji webowych", {

@@ -39,7 +39,7 @@ export function createSlide6(pres: PptxGenJS): void {
     fontFace: "Arial",
   });
 
-  slide.addText("Opracowałem sklep internetowy z konstruktorami produktów", {
+  slide.addText("Opracowałem stronę internetową z konstruktorami produktów", {
     x: 1,
     y: 1.8,
     w: 8,
@@ -97,7 +97,7 @@ export function createSlide6(pres: PptxGenJS): void {
 
   const achievements = [
     "• Osiągnięcie 1 - opracowałem, uruchomiłem, utrzymuję i dalej rozwijam UniPrint",
-    "• Osiągnięcie 2 - Dzięki wykresom, które opracowałem na Prospi.ai, zachowano 8% subskrypcji (63% -> 71% trzy miesiące po wykupieniu subskrypcji)",
+    "• Osiągnięcie 2 - Dzięki wykresom, które stworzyłem na Prospi.ai, zachowano 8% subskrypcji (63% -> 71% trzy miesiące po wykupieniu subskrypcji)",
     "• Osiągnięcie 3 - wkład w projekt open-source",
   ];
 

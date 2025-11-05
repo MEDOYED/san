@@ -1,5 +1,6 @@
 import PptxGenJS from "pptxgenjs";
 import { HobbyImg } from "@shared/assets/img";
+import { SilowniaImg } from "@shared/assets/img";
 import { imageToBase64 } from "@shared/lib/imageToBase64";
 
 export function createSlide4(pres: PptxGenJS): void {
@@ -94,8 +95,8 @@ export function createSlide4(pres: PptxGenJS): void {
     fontFace: "Arial",
   });
 
-  // Картинка для хоббі 3
-  const image2 = imageToBase64(HobbyImg);
+  // Картинка для хоббі 2
+  const image2 = imageToBase64(SilowniaImg);
   if (image2) {
     slide.addImage({
       data: image2,
