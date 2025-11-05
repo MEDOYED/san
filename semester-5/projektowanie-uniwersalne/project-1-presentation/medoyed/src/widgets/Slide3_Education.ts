@@ -7,7 +7,7 @@ export function createSlide3(pres: PptxGenJS): void {
   slide.background = { color: "FFFFFF" };
 
   // Заголовок
-  slide.addText("Моя освіта", {
+  slide.addText("Moja edukacja", {
     x: 0.5,
     y: 0.5,
     w: 9,
@@ -28,7 +28,7 @@ export function createSlide3(pres: PptxGenJS): void {
     line: { color: "CCCCCC", width: 1 },
   });
 
-  slide.addText("🎓 Університет", {
+  slide.addText("🎓 Kolegium", {
     x: 1.2,
     y: 1.7,
     w: 7.6,
@@ -39,7 +39,7 @@ export function createSlide3(pres: PptxGenJS): void {
     fontFace: "Arial",
   });
 
-  slide.addText("[Назва твого університету]", {
+  slide.addText("Kolegium Technologiczne Politechniki Lwowskiej", {
     x: 1.2,
     y: 2.2,
     w: 7.6,
@@ -49,7 +49,7 @@ export function createSlide3(pres: PptxGenJS): void {
     fontFace: "Arial",
   });
 
-  slide.addText("Факультет: [Твій факультет]", {
+  slide.addText("Inżynieria komputerowa", {
     x: 1.2,
     y: 2.6,
     w: 7.6,
@@ -69,7 +69,7 @@ export function createSlide3(pres: PptxGenJS): void {
     line: { color: "CCCCCC", width: 1 },
   });
 
-  slide.addText("📚 Спеціальність", {
+  slide.addText("📚 Uniwersytet", {
     x: 1.2,
     y: 3.5,
     w: 7.6,
@@ -80,7 +80,7 @@ export function createSlide3(pres: PptxGenJS): void {
     fontFace: "Arial",
   });
 
-  slide.addText("Інформаційні технології / Комп'ютерні науки", {
+  slide.addText("Społeczna Akademia Nauk / Informatyka ", {
     x: 1.2,
     y: 4,
     w: 7.6,
@@ -91,14 +91,17 @@ export function createSlide3(pres: PptxGenJS): void {
   });
 
   // Курс та рік
-  slide.addText("• Курс: [X] курс   • Рік вступу: [202X]   • Очікуваний рік випуску: [202X]", {
-    x: 1,
-    y: 4.5,
-    w: 8,
-    h: 1,
-    fontSize: 16,
-    color: "333333",
-    lineSpacing: 24,
-    fontFace: "Arial",
-  });
+  slide.addText(
+    "• Rok studiów: 3   • Rok rozpoczęcia: 2023   • Przewidywany rok ukończenia: 2027",
+    {
+      x: 0.6,
+      y: 4.5,
+      w: 9,
+      h: 1,
+      fontSize: 16,
+      color: "333333",
+      lineSpacing: 24,
+      fontFace: "Arial",
+    }
+  );
 }
