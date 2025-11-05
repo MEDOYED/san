@@ -39,21 +39,21 @@ const SLIDE_CONFIG = {
   title: {
     fontSize: 48,
     color: "000000", // Чорний текст (контраст 21:1 на білому - WCAG AAA)
-    position: { x: 1, y: 1.5, w: 8, h: 1 } as Position,
+    position: { x: 1, y: 0.3, w: 8, h: 1 } as Position,
     bold: true,
   },
   subtitle: {
     fontSize: 36,
     color: "333333", // Темно-сірий (контраст 12.6:1 - WCAG AAA)
-    position: { x: 1, y: 2.5, w: 8, h: 0.8 } as Position,
+    position: { x: 1, y: 1.1, w: 8, h: 0.8 } as Position,
   },
   description: {
     fontSize: 20,
     color: "555555", // Середньо-сірий (контраст 7:1 - WCAG AAA для великого тексту)
-    position: { x: 1, y: 3.5, w: 8, h: 0.6 } as Position,
+    position: { x: 1, y: 1.8, w: 8, h: 0.6 } as Position,
   },
   photo: {
-    position: { x: 3.5, y: 4.5, w: 3, h: 3 } as Position,
+    position: { x: 3.75, y: 2.5, w: 2.5, h: 2.5 } as Position,
     placeholderBg: "F0F0F0", // Світло-сірий фон для placeholder
     placeholderTextColor: "666666", // Контраст 5.7:1 (WCAG AA для великого тексту)
   },
@@ -132,7 +132,7 @@ function addProfilePhoto(
         });
       }
     } catch (error) {
-      console.error("Помилка завантаження фото:", error);
+      console.error("Błąd ładowania zdjęcia:", error);
       // У випадку помилки показуємо placeholder
       addPhotoPlaceholder(pres, slide);
     }
@@ -159,7 +159,7 @@ function addPhotoPlaceholder(pres: PptxGenJS, slide: Slide): void {
   });
 
   // Додаємо текст в центрі placeholder
-  slide.addText("Місце для фото\nпрофілю", {
+  slide.addText("Miejsce na zdjęcie\nprofilowe", {
     x: photoConfig.position.x,
     y: photoConfig.position.y + photoConfig.position.h / 2 - 0.3,
     w: photoConfig.position.w,
@@ -177,21 +177,21 @@ function addPhotoPlaceholder(pres: PptxGenJS, slide: Slide): void {
  */
 function validateSlideData(data: TitleSlideDataTypes): void {
   if (!data.firstName?.trim()) {
-    throw new Error("Ім'я є обов'язковим полем");
+    throw new Error("Imię jest polem obowiązkowym");
   }
 
   if (!data.lastName?.trim()) {
-    throw new Error("Прізвище є обов'язковим полем");
+    throw new Error("Nazwisko jest polem obowiązkowym");
   }
 
   if (!data.description?.trim()) {
-    throw new Error("Опис є обов'язковим полем");
+    throw new Error("Opis jest polem obowiązkowym");
   }
 
   // Попередження про занадто довгий текст
   if (data.description.length > 100) {
     console.warn(
-      `⚠️ Опис занадто довгий (${data.description.length} символів). Рекомендовано до 100 символів.`
+      `⚠️ Opis jest za długi (${data.description.length} znaków). Zalecane do 100 znaków.`
     );
   }
 }

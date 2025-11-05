@@ -3,9 +3,9 @@ import { HobbyImg } from "@shared/assets/img";
 
 // Дані для титульного слайду
 export const titleSlideData: TitleSlideDataTypes = {
-  firstName: "Максим",
-  lastName: "Мокряков",
-  description: "Студент | Програміст | Стрілок з луку",
+  firstName: "Maksym",
+  lastName: "Mokriakov",
+  description: "Student | Programista | Łucznik",
   photoPath: HobbyImg,
-  photoAltText: "Фото Максима під час стрільби з луку",
+  photoAltText: "Zdjęcie Maksyma podczas strzelania z łuku",
 };
