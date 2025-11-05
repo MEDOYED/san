@@ -7,7 +7,7 @@ export function createSlide8(pres: PptxGenJS): void {
   slide.background = { color: "FFFFFF" };
 
   // Заголовок
-  slide.addText("Контакти", {
+  slide.addText("Kontakt", {
     x: 0.5,
     y: 0.8,
     w: 9,
@@ -41,7 +41,7 @@ export function createSlide8(pres: PptxGenJS): void {
     fontFace: "Arial",
   });
 
-  slide.addText("[твій.email@example.com]", {
+  slide.addText("mmax@gmail.com", {
     x: 4.5,
     y: 2.3,
     w: 3,
@@ -63,7 +63,7 @@ export function createSlide8(pres: PptxGenJS): void {
     fontFace: "Arial",
   });
 
-  slide.addText("github.com/[твій-username]", {
+  slide.addText("github.com/MEDOYED", {
     x: 4.5,
     y: 2.9,
     w: 3,
@@ -85,7 +85,7 @@ export function createSlide8(pres: PptxGenJS): void {
     fontFace: "Arial",
   });
 
-  slide.addText("linkedin.com/in/[твій-профіль]", {
+  slide.addText("linkedin.com/in/maksym", {
     x: 4.5,
     y: 3.5,
     w: 3,
@@ -96,7 +96,7 @@ export function createSlide8(pres: PptxGenJS): void {
   });
 
   // Телефон (опціонально)
-  slide.addText("📱 Телефон:", {
+  slide.addText("📱 Telefon:", {
     x: 2.5,
     y: 4.1,
     w: 2,
@@ -107,7 +107,7 @@ export function createSlide8(pres: PptxGenJS): void {
     fontFace: "Arial",
   });
 
-  slide.addText("[+XX XXX XXX XXX]", {
+  slide.addText("+48 484 448 844", {
     x: 4.5,
     y: 4.1,
     w: 3,
@@ -118,9 +118,9 @@ export function createSlide8(pres: PptxGenJS): void {
   });
 
   // Заключна фраза
-  slide.addText("Дякую за увагу!", {
+  slide.addText("Dziękuję za uwagę!", {
     x: 2,
-    y: 5,
+    y: 4.8,
     w: 6,
     h: 0.6,
     fontSize: 24,
