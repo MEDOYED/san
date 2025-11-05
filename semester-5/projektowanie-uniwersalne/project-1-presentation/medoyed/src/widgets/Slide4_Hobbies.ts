@@ -9,7 +9,7 @@ export function createSlide4(pres: PptxGenJS): void {
   slide.background = { color: "FFFFFF" };
 
   // Заголовок
-  slide.addText("Мої хоббі та інтереси", {
+  slide.addText("Moje hobby i zainteresowania", {
     x: 0.5,
     y: 0.5,
     w: 9,
@@ -30,7 +30,7 @@ export function createSlide4(pres: PptxGenJS): void {
     line: { color: "4CAF50", width: 2 },
   });
 
-  slide.addText("🎮 [Хоббі 1]", {
+  slide.addText("🎮 Łucznictwo", {
     x: 1,
     y: 1.7,
     w: 3.6,
@@ -41,7 +41,7 @@ export function createSlide4(pres: PptxGenJS): void {
     fontFace: "Arial",
   });
 
-  slide.addText("[Опис хоббі - наприклад: геймінг, стратегічні ігри, кіберспорт]", {
+  slide.addText("Strzelam z łuku na 30 i 60 metrów", {
     x: 1,
     y: 2.2,
     w: 3.6,
@@ -63,7 +63,7 @@ export function createSlide4(pres: PptxGenJS): void {
     });
   }
 
-  // Хоббі 3
+  // Хоббі 2
   slide.addShape("rect", {
     x: 0.8,
     y: 3.3,
@@ -73,7 +73,7 @@ export function createSlide4(pres: PptxGenJS): void {
     line: { color: "FF9800", width: 2 },
   });
 
-  slide.addText("📚 [Хоббі 3]", {
+  slide.addText("📚 Siłownia", {
     x: 1,
     y: 3.5,
     w: 3.6,
@@ -84,7 +84,7 @@ export function createSlide4(pres: PptxGenJS): void {
     fontFace: "Arial",
   });
 
-  slide.addText("[Опис хоббі - наприклад: читання, навчання нового, технічна література]", {
+  slide.addText("Lubię podnosić ciężary", {
     x: 1,
     y: 4,
     w: 3.6,
@@ -107,7 +107,7 @@ export function createSlide4(pres: PptxGenJS): void {
   }
 
   // Нижній текст
-  slide.addText("Мої хоббі допомагають мені розвиватися всебічно та знаходити баланс", {
+  slide.addText("Moje hobby pomaga mi rozwijać się wszechstronnie i znajdować równowagę", {
     x: 1,
     y: 4.9,
     w: 8,
