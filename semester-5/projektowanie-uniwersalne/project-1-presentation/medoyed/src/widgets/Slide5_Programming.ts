@@ -7,7 +7,7 @@ export function createSlide5(pres: PptxGenJS): void {
   slide.background = { color: "FFFFFF" };
 
   // Заголовок
-  slide.addText("Навички програмування", {
+  slide.addText("Umiejętności programowania", {
     x: 0.5,
     y: 0.5,
     w: 9,
@@ -19,7 +19,7 @@ export function createSlide5(pres: PptxGenJS): void {
   });
 
   // Мови програмування
-  slide.addText("💻 Мови програмування:", {
+  slide.addText("💻 Języki programowania:", {
     x: 0.8,
     y: 1.3,
     w: 8.4,
@@ -30,7 +30,7 @@ export function createSlide5(pres: PptxGenJS): void {
     fontFace: "Arial",
   });
 
-  const languages = ["• JavaScript / TypeScript - просунутий рівень", "• Java - базовий рівень"];
+  const languages = ["• JavaScript / TypeScript - poziom zaawansowany", "• Java - poziom podstawowy"];
 
   slide.addText(languages.join("\n"), {
     x: 1.2,
@@ -44,7 +44,7 @@ export function createSlide5(pres: PptxGenJS): void {
   });
 
   // Frameworks та бібліотеки
-  slide.addText("🔧 Frameworks та інструменти:", {
+  slide.addText("🔧 Frameworki i narzędzia:", {
     x: 0.8,
     y: 2.6,
     w: 8.4,
@@ -75,7 +75,7 @@ export function createSlide5(pres: PptxGenJS): void {
   });
 
   // Досвід
-  slide.addText("⏱️ Досвід програмування: 2+ роки", {
+  slide.addText("⏱️ Doświadczenie w programowaniu: 2+ lata", {
     x: 1,
     y: 4.7,
     w: 8,
