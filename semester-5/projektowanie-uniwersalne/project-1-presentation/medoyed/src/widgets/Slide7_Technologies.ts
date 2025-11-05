@@ -7,7 +7,7 @@ export function createSlide7(pres: PptxGenJS): void {
   slide.background = { color: "FFFFFF" };
 
   // Заголовок
-  slide.addText("Технології та інструменти", {
+  slide.addText("Technologie i narzędzia", {
     x: 0.5,
     y: 0.5,
     w: 9,
@@ -15,7 +15,7 @@ export function createSlide7(pres: PptxGenJS): void {
     fontSize: 32,
     bold: true,
     color: "000000",
-    fontFace: "Arial"
+    fontFace: "Arial",
   });
 
   // Frontend
@@ -25,7 +25,7 @@ export function createSlide7(pres: PptxGenJS): void {
     w: 4.3,
     h: 1.8,
     fill: { color: "E3F2FD" },
-    line: { color: "2196F3", width: 2 }
+    line: { color: "2196F3", width: 2 },
   });
 
   slide.addText("🎨 Frontend", {
@@ -36,19 +36,22 @@ export function createSlide7(pres: PptxGenJS): void {
     fontSize: 20,
     bold: true,
     color: "000000",
-    fontFace: "Arial"
+    fontFace: "Arial",
   });
 
-  slide.addText("• HTML / CSS / SCSS\n• JavaScript / TypeScript\n• React / Vue / Angular\n• Tailwind CSS", {
-    x: 0.7,
-    y: 2.1,
-    w: 3.9,
-    h: 1,
-    fontSize: 14,
-    color: "333333",
-    lineSpacing: 20,
-    fontFace: "Arial"
-  });
+  slide.addText(
+    "• HTML / CSS / SCSS\n• JavaScript / TypeScript\n• React / redux / zustand\n• Tailwind CSS",
+    {
+      x: 0.7,
+      y: 2.1,
+      w: 3.9,
+      h: 1,
+      fontSize: 14,
+      color: "333333",
+      lineSpacing: 20,
+      fontFace: "Arial",
+    }
+  );
 
   // Backend
   slide.addShape("rect", {
@@ -57,7 +60,7 @@ export function createSlide7(pres: PptxGenJS): void {
     w: 4.3,
     h: 1.8,
     fill: { color: "E8F5E9" },
-    line: { color: "4CAF50", width: 2 }
+    line: { color: "4CAF50", width: 2 },
   });
 
   slide.addText("⚙️ Backend", {
@@ -68,10 +71,10 @@ export function createSlide7(pres: PptxGenJS): void {
     fontSize: 20,
     bold: true,
     color: "000000",
-    fontFace: "Arial"
+    fontFace: "Arial",
   });
 
-  slide.addText("• Node.js / Express\n• Python / Django\n• REST API\n• PostgreSQL / MongoDB", {
+  slide.addText("• Node.js / Express\n• REST API\n• PostgreSQL / MongoDB", {
     x: 5.4,
     y: 2.1,
     w: 3.9,
@@ -79,7 +82,7 @@ export function createSlide7(pres: PptxGenJS): void {
     fontSize: 14,
     color: "333333",
     lineSpacing: 20,
-    fontFace: "Arial"
+    fontFace: "Arial",
   });
 
   // DevOps та інструменти
@@ -89,7 +92,7 @@ export function createSlide7(pres: PptxGenJS): void {
     w: 4.3,
     h: 1.8,
     fill: { color: "FFF3E0" },
-    line: { color: "FF9800", width: 2 }
+    line: { color: "FF9800", width: 2 },
   });
 
   slide.addText("🔧 DevOps", {
@@ -100,7 +103,7 @@ export function createSlide7(pres: PptxGenJS): void {
     fontSize: 20,
     bold: true,
     color: "000000",
-    fontFace: "Arial"
+    fontFace: "Arial",
   });
 
   slide.addText("• Git / GitHub\n• Docker\n• CI/CD\n• Linux", {
@@ -111,7 +114,7 @@ export function createSlide7(pres: PptxGenJS): void {
     fontSize: 14,
     color: "333333",
     lineSpacing: 20,
-    fontFace: "Arial"
+    fontFace: "Arial",
   });
 
   // Інші інструменти
@@ -121,10 +124,10 @@ export function createSlide7(pres: PptxGenJS): void {
     w: 4.3,
     h: 1.8,
     fill: { color: "F3E5F5" },
-    line: { color: "9C27B0", width: 2 }
+    line: { color: "9C27B0", width: 2 },
   });
 
-  slide.addText("🛠️ Інструменти", {
+  slide.addText("🛠️ Narzędzia", {
     x: 5.4,
     y: 3.7,
     w: 3.9,
@@ -132,7 +135,7 @@ export function createSlide7(pres: PptxGenJS): void {
     fontSize: 20,
     bold: true,
     color: "000000",
-    fontFace: "Arial"
+    fontFace: "Arial",
   });
 
   slide.addText("• VS Code\n• Figma\n• Postman\n• Jira / Trello", {
@@ -143,6 +146,6 @@ export function createSlide7(pres: PptxGenJS): void {
     fontSize: 14,
     color: "333333",
     lineSpacing: 20,
-    fontFace: "Arial"
+    fontFace: "Arial",
   });
 }
