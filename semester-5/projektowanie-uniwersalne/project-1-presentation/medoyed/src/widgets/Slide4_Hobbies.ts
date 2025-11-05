@@ -30,7 +30,7 @@ export function createSlide4(pres: PptxGenJS): void {
     line: { color: "4CAF50", width: 2 },
   });
 
-  slide.addText("🎮 Łucznictwo", {
+  slide.addText("🎯 Łucznictwo", {
     x: 1,
     y: 1.7,
     w: 3.6,
@@ -73,7 +73,7 @@ export function createSlide4(pres: PptxGenJS): void {
     line: { color: "FF9800", width: 2 },
   });
 
-  slide.addText("📚 Siłownia", {
+  slide.addText("💪 Siłownia", {
     x: 1,
     y: 3.5,
     w: 3.6,
