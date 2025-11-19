@@ -1,0 +1,5 @@
+Dokument prezentacji zawiera następujące niedociągnięcia pod względem dostępności cyfrowej:
+
+1) Brak numeracji stron: uniemożliwia to nawigację osobom korzystającym z czytników ekranu oraz orientację w strukturze dokumentu.
+
+2) Brak tekstów alternatywnych (alt) dla obrazów: obrazy są niedostępne dla użytkowników niewidomych lub słabowidzących, którzy korzystają z technologii wspomagających.

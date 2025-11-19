@@ -253,5 +253,15 @@ export function createSlide1(pres: PptxGenJS, data: TitleSlideDataTypes): Slide 
   // Додаємо фото профілю або placeholder
   addProfilePhoto(pres, slide, data.photoPath, data.photoAltText);
 
+  // Додаємо аудіо озвучку слайду
+  slide.addMedia({
+    type: "audio",
+    path: "src/app/audio/slide-1.mp3",
+    x: 0.1,
+    y: 0.1,
+    w: 0.5,
+    h: 0.5,
+  });
+
   return slide;
 }

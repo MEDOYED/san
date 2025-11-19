@@ -124,4 +124,14 @@ export function createSlide4(pres: PptxGenJS): void {
     align: "center",
     fontFace: "Arial",
   });
+
+  // Додаємо аудіо озвучку слайду
+  slide.addMedia({
+    type: "audio",
+    path: "src/app/audio/slide-4.mp3",
+    x: 0.1,
+    y: 0.1,
+    w: 0.5,
+    h: 0.5,
+  });
 }

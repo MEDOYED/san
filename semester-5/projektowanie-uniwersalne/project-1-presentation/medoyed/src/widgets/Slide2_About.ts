@@ -82,4 +82,14 @@ export function createSlide2(pres: PptxGenJS): void {
     fontFace: "Arial",
     align: "center",
   });
+
+  // Додаємо аудіо озвучку слайду
+  slide.addMedia({
+    type: "audio",
+    path: "src/app/audio/slide-2.mp3",
+    x: 0.1,
+    y: 0.1,
+    w: 0.5,
+    h: 0.5,
+  });
 }

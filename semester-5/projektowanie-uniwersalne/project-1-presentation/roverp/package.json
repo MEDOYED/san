@@ -1,0 +1,29 @@
+{
+  "name": "medoyed",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc && npm run copy-assets",
+    "copy-assets": "copyfiles -u 1 \"src/**/*.{png,jpg,jpeg,gif,svg,webp}\" dist",
+    "start": "node -r tsconfig-paths/register dist/app/presentation.js",
+    "dev": "ts-node -r tsconfig-paths/register src/app/presentation.ts",
+    "watch": "nodemon --exec ts-node -r tsconfig-paths/register src/app/presentation.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "pptxgenjs": "^4.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.0",
+    "copyfiles": "^2.4.1",
+    "nodemon": "^3.1.10",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.9.3"
+  }
+}

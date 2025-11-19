@@ -87,4 +87,14 @@ export function createSlide5(pres: PptxGenJS): void {
     color: "555555",
     fontFace: "Arial",
   });
+
+  // Додаємо аудіо озвучку слайду
+  slide.addMedia({
+    type: "audio",
+    path: "src/app/audio/slide-5.mp3",
+    x: 0.1,
+    y: 0.1,
+    w: 0.5,
+    h: 0.5,
+  });
 }

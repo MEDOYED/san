@@ -107,4 +107,14 @@ export function createSlide3(pres: PptxGenJS): void {
       fontFace: "Arial",
     }
   );
+
+  // Додаємо аудіо озвучку слайду
+  slide.addMedia({
+    type: "audio",
+    path: "src/app/audio/slide-3.mp3",
+    x: 0.1,
+    y: 0.1,
+    w: 0.5,
+    h: 0.5,
+  });
 }
