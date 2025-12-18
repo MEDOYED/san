@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hobby Maksyma Mokriakova - łucznictwo, siłownia, aktywność fizyczna">
+    <title>Hobby - Maksym Mokriakov</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Przejdź do głównej treści</a>
+
+    <header role="banner">
+        <nav role="navigation" aria-label="Główna nawigacja">
+            <button id="menu-toggle" aria-expanded="false" aria-controls="main-nav" class="menu-toggle">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="sr-only">Menu</span>
+            </button>
+            <ul id="main-nav" class="nav-menu">
+                <li><a href="index.html">Strona główna</a></li>
+                <li><a href="about.html">O mnie</a></li>
+                <li><a href="education.html">Edukacja</a></li>
+                <li><a href="hobby.html" aria-current="page">Hobby</a></li>
+                <li><a href="skills.html">Umiejętności</a></li>
+                <li><a href="projects.html">Projekty</a></li>
+                <li><a href="contact.html">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content" role="main">
+        <article>
+            <h1>Moje hobby i zainteresowania</h1>
+
+            <p class="intro">
+                Poza programowaniem, aktywnie rozwijam swoje zainteresowania związane ze sportem
+                i aktywnością fizyczną. Uważam, że równowaga między pracą umysłową a fizyczną
+                jest kluczowa dla wszechstronnego rozwoju.
+            </p>
+
+            <div class="hobby-images">
+                <figure>
+                    <img src="images/hobby-img.png"
+                         alt="Maksym Mokriakov celujący z łuku podczas treningu w lesie"
+                         width="600"
+                         height="400">
+                    <figcaption>Trening łuczniczy w lesie</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/silownia.png"
+                         alt="Trening siłowy z hantlami w siłowni"
+                         width="600"
+                         height="400">
+                    <figcaption>Trening siłowy w siłowni</figcaption>
+                </figure>
+            </div>
+
+            <section aria-labelledby="archery-heading">
+                <h2 id="archery-heading">Łucznictwo</h2>
+                <p>
+                    Łucznictwo to moja główna pasja poza programowaniem. Strzelam z łuku na
+                    dystansach 30 i 60 metrów, co wymaga nie tylko precyzji i koncentracji,
+                    ale także cierpliwości i systematyczności - cech, które przydają się również
+                    w programowaniu.
+                </p>
+
+                <h3>Dlaczego łucznictwo?</h3>
+                <ul>
+                    <li>Rozwija koncentrację i cierpliwość</li>
+                    <li>Uczy systematyczności i dyscypliny</li>
+                    <li>Pozwala odpocząć od pracy przy komputerze</li>
+                    <li>Daje satysfakcję z mierzalnego postępu</li>
+                </ul>
+            </section>
+
+            <section aria-labelledby="gym-heading">
+                <h2 id="gym-heading">Siłownia</h2>
+                <p>
+                    Regularne treningi siłowe stanowią ważną część mojej rutyny. Lubię podnosić
+                    ciężary, co pomaga mi utrzymać dobrą kondycję fizyczną i równowagę między
+                    pracą umysłową a fizyczną.
+                </p>
+
+                <h3>Korzyści z treningów:</h3>
+                <ul>
+                    <li>Poprawa kondycji fizycznej i zdrowia</li>
+                    <li>Zwiększenie energii i produktywności</li>
+                    <li>Redukcja stresu</li>
+                    <li>Rozwój dyscypliny i wytrwałości</li>
+                </ul>
+            </section>
+
+            <section aria-labelledby="balance-heading">
+                <h2 id="balance-heading">Równowaga w życiu</h2>
+                <p>
+                    Moje hobby pomaga mi rozwijać się wszechstronnie i znajdować równowagę między
+                    różnymi aspektami życia. Zarówno łucznictwo, jak i treningi siłowe uczą mnie
+                    wytrwałości, systematyczności i dążenia do celów - wartości, które przenoszę
+                    również do mojej pracy programistycznej.
+                </p>
+            </section>
+
+            <nav aria-label="Nawigacja między stronami" class="page-nav">
+                <a href="education.html" class="btn-prev">← Poprzednia: Edukacja</a>
+                <a href="skills.html" class="btn-next">Następna: Umiejętności →</a>
+            </nav>
+        </article>
+    </main>
+
+    <footer role="contentinfo">
+        <p>&copy; 2025 Maksym Mokriakov. Projekt 3 - Projektowanie Uniwersalne.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio osobiste Maksyma Mokriakova - student informatyki, programista, łucznik">
+    <meta name="keywords" content="Maksym Mokriakov, portfolio, programista, informatyka, JavaScript, React">
+    <meta name="author" content="Maksym Mokriakov">
+    <title>Maksym Mokriakov - Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link">Przejdź do głównej treści</a>
+
+    <header role="banner">
+        <nav role="navigation" aria-label="Główna nawigacja">
+            <button id="menu-toggle" aria-expanded="false" aria-controls="main-nav" class="menu-toggle">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="sr-only">Menu</span>
+            </button>
+            <ul id="main-nav" class="nav-menu">
+                <li><a href="index.html" aria-current="page">Strona główna</a></li>
+                <li><a href="about.html">O mnie</a></li>
+                <li><a href="education.html">Edukacja</a></li>
+                <li><a href="hobby.html">Hobby</a></li>
+                <li><a href="skills.html">Umiejętności</a></li>
+                <li><a href="projects.html">Projekty</a></li>
+                <li><a href="contact.html">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content" role="main">
+        <section class="hero" aria-labelledby="hero-heading">
+            <div class="hero-content">
+                <h1 id="hero-heading">Maksym Mokriakov</h1>
+                <p class="hero-subtitle">Student | Programista | Łucznik</p>
+
+                <figure class="hero-image">
+                    <img src="images/hobby-img.png"
+                         alt="Maksym Mokriakov z łukiem podczas treningu łuczniczego w lesie"
+                         width="600"
+                         height="400">
+                    <figcaption>Autor podczas treningu łuczniczego</figcaption>
+                </figure>
+
+                <div class="personal-info">
+                    <h2>Dane osobowe</h2>
+                    <dl>
+                        <dt>Imię i nazwisko:</dt>
+                        <dd>Maksym Mokriakov</dd>
+
+                        <dt>Wiek:</dt>
+                        <dd>20 lat</dd>
+
+                        <dt>Miasto:</dt>
+                        <dd>Łódź, Polska</dd>
+
+                        <dt>Kierunek studiów:</dt>
+                        <dd>Informatyka (rok 3)</dd>
+
+                        <dt>Uczelnia:</dt>
+                        <dd>Społeczna Akademia Nauk</dd>
+                    </dl>
+                </div>
+
+                <div class="quick-links">
+                    <h2>Poznaj mnie bliżej</h2>
+                    <div class="link-cards">
+                        <a href="about.html" class="card">
+                            <h3>O mnie</h3>
+                            <p>Poznaj moją historię i zainteresowania</p>
+                        </a>
+                        <a href="education.html" class="card">
+                            <h3>Edukacja</h3>
+                            <p>Moja droga edukacyjna w IT</p>
+                        </a>
+                        <a href="hobby.html" class="card">
+                            <h3>Hobby</h3>
+                            <p>Łucznictwo i siłownia</p>
+                        </a>
+                        <a href="skills.html" class="card">
+                            <h3>Umiejętności</h3>
+                            <p>Technologie i narzędzia</p>
+                        </a>
+                        <a href="projects.html" class="card">
+                            <h3>Projekty</h3>
+                            <p>Moje realizacje i osiągnięcia</p>
+                        </a>
+                        <a href="contact.html" class="card">
+                            <h3>Kontakt</h3>
+                            <p>Skontaktuj się ze mną</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <p>&copy; 2025 Maksym Mokriakov. Projekt 3 - Projektowanie Uniwersalne.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

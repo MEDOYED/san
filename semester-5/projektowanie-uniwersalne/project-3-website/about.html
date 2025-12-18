@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="O Maksymie Mokriakove - student informatyki, programista, zainteresowania">
+    <title>O mnie - Maksym Mokriakov</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Przejdź do głównej treści</a>
+
+    <header role="banner">
+        <nav role="navigation" aria-label="Główna nawigacja">
+            <button id="menu-toggle" aria-expanded="false" aria-controls="main-nav" class="menu-toggle">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="sr-only">Menu</span>
+            </button>
+            <ul id="main-nav" class="nav-menu">
+                <li><a href="index.html">Strona główna</a></li>
+                <li><a href="about.html" aria-current="page">O mnie</a></li>
+                <li><a href="education.html">Edukacja</a></li>
+                <li><a href="hobby.html">Hobby</a></li>
+                <li><a href="skills.html">Umiejętności</a></li>
+                <li><a href="projects.html">Projekty</a></li>
+                <li><a href="contact.html">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content" role="main">
+        <article>
+            <h1>O mnie</h1>
+
+            <section aria-labelledby="intro-heading">
+                <h2 id="intro-heading" class="sr-only">Wprowadzenie</h2>
+                <p>
+                    Nazywam się <strong>Maksym Mokriakov</strong>, mam 20 lat i mieszkam w Łodzi.
+                    Jestem studentem trzeciego roku informatyki na Społecznej Akademii Nauk.
+                    Moimi głównymi zainteresowaniami są programowanie i łucznictwo, które pozwalają
+                    mi rozwijać zarówno umiejętności techniczne, jak i fizyczne.
+                </p>
+
+                <figure>
+                    <img src="images/front-end.png"
+                         alt="Ilustracja przedstawiająca technologie webowe - monitor z kodem, chmura, ikony React i narzędzia programistyczne"
+                         width="800"
+                         height="500">
+                    <figcaption>Technologie webowe i narzędzia programistyczne</figcaption>
+                </figure>
+
+                <p>
+                    Pasjonuję się technologiami internetowymi i tworzeniem aplikacji webowych.
+                    W szczególności interesuje mnie rozwój frontend oraz backend aplikacji, a także
+                    projektowanie przyjaznych dla użytkownika interfejsów. Stale poszerzam swoją
+                    wiedzę o nowe frameworki i narzędzia programistyczne.
+                </p>
+            </section>
+
+            <section aria-labelledby="basic-info">
+                <h2 id="basic-info">Podstawowe informacje</h2>
+                <dl class="info-list">
+                    <dt>Imię i nazwisko:</dt>
+                    <dd>Maksym Mokriakov</dd>
+
+                    <dt>Wiek:</dt>
+                    <dd>20 lat</dd>
+
+                    <dt>Miasto:</dt>
+                    <dd>Łódź, Polska</dd>
+
+                    <dt>Kierunek studiów:</dt>
+                    <dd>Informatyka</dd>
+
+                    <dt>Główne zainteresowania:</dt>
+                    <dd>programowanie, łucznictwo, technologie webowe</dd>
+                </dl>
+
+                <p>
+                    Interesuję się tworzeniem nowoczesnych aplikacji internetowych, które łączą
+                    atrakcyjny design z funkcjonalnością i wydajnością. W wolnym czasie rozwijam
+                    swoje umiejętności poprzez pracę nad osobistymi projektami oraz udział w
+                    projektach open-source.
+                </p>
+            </section>
+
+            <nav aria-label="Nawigacja między stronami" class="page-nav">
+                <a href="education.html" class="btn-next">Następna strona: Edukacja →</a>
+            </nav>
+        </article>
+    </main>
+
+    <footer role="contentinfo">
+        <p>&copy; 2025 Maksym Mokriakov. Projekt 3 - Projektowanie Uniwersalne.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

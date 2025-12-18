@@ -1,0 +1,313 @@
+═══════════════════════════════════════════════════════════════════════════════
+              SCHEMAT BLOKOWY WITRYNY - MAKSYM MOKRIAKOV PORTFOLIO
+═══════════════════════════════════════════════════════════════════════════════
+
+PROJEKT: "Prezentacja mojej osoby"
+AUTOR: Maksym Mokriakov
+UCZELNIA: Społeczna Akademia Nauk
+PROJEKT: 3 - Projektowanie Uniwersalne
+
+═══════════════════════════════════════════════════════════════════════════════
+                              STRUKTURA NAWIGACYJNA
+═══════════════════════════════════════════════════════════════════════════════
+
+POZIOM 0 (Strona główna)
+────────────────────────────────────────────────────────────────────────────
+                                 ┌──────────────┐
+                                 │  INDEX.HTML  │
+                                 │              │
+                                 │ Strona       │
+                                 │ Główna       │
+                                 └──────┬───────┘
+                                        │
+                 ┌──────────────────────┼──────────────────────┐
+                 │                      │                      │
+                 ▼                      ▼                      ▼
+
+POZIOM 1 (Strony treści)
+────────────────────────────────────────────────────────────────────────────
+
+┌──────────────┐  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐
+│  ABOUT.HTML  │  │EDUCATION.HTML│  │  HOBBY.HTML  │  │ SKILLS.HTML  │
+│              │  │              │  │              │  │              │
+│   O mnie     │  │   Edukacja   │  │    Hobby     │  │ Umiejętności │
+└──────────────┘  └──────────────┘  └──────────────┘  └──────────────┘
+
+┌──────────────┐  ┌──────────────┐
+│PROJECTS.HTML │  │CONTACT.HTML  │
+│              │  │              │
+│  Projekty    │  │   Kontakt    │
+└──────────────┘  └──────────────┘
+
+═══════════════════════════════════════════════════════════════════════════════
+                         SZCZEGÓŁOWY OPIS STRON
+═══════════════════════════════════════════════════════════════════════════════
+
+1. INDEX.HTML - Strona główna (Poziom 0)
+   ─────────────────────────────────────
+   Zawartość:
+   • Zdjęcie autora (hobby-img.png)
+   • Dane osobowe (imię, nazwisko, wiek, miasto, kierunek studiów)
+   • Tytuł: "Maksym Mokriakov"
+   • Podtytuł: "Student | Programista | Łucznik"
+   • Interaktywne menu nawigacyjne do wszystkich podstron
+   • Karty szybkiego dostępu do sekcji
+
+   Nawigacja do:
+   → about.html
+   → education.html
+   → hobby.html
+   → skills.html
+   → projects.html
+   → contact.html
+
+2. ABOUT.HTML - O mnie (Poziom 1)
+   ────────────────────────────────
+   Zawartość:
+   • Wprowadzenie - kim jestem, czym się zajmuję
+   • Zdjęcie: front-end.png (technologie webowe)
+   • Pasje i zainteresowania programowaniem
+   • Podstawowe informacje osobowe (lista)
+   • Opis zainteresowań technologiami webowymi
+
+   Źródło treści: Slajd 2 prezentacji
+
+3. EDUCATION.HTML - Edukacja (Poziom 1)
+   ─────────────────────────────────────
+   Zawartość:
+   • Kolegium Technologiczne Politechniki Lwowskiej
+     - Kierunek: Inżynieria komputerowa
+     - Opis zdobytych umiejętności
+
+   • Społeczna Akademia Nauk
+     - Kierunek: Informatyka
+     - Rok studiów: 3
+     - Rok rozpoczęcia: 2023
+     - Przewidywany rok ukończenia: 2027
+
+   • Rozwój kompetencji
+     - Kursy online
+     - Projekty open-source
+     - Samodzielna nauka
+     - Śledzenie trendów IT
+
+   Źródło treści: Slajd 3 prezentacji
+
+4. HOBBY.HTML - Hobby i zainteresowania (Poziom 1)
+   ───────────────────────────────────────────────
+   Zawartość:
+   • Zdjęcia:
+     - hobby-img.png (łucznictwo)
+     - silownia.png (trening siłowy)
+
+   • Łucznictwo
+     - Dystanse: 30 i 60 metrów
+     - Korzyści: koncentracja, cierpliwość, systematyczność
+
+   • Siłownia
+     - Treningi siłowe
+     - Korzyści: kondycja, energia, redukcja stresu
+
+   • Równowaga w życiu
+     - Połączenie pracy umysłowej i fizycznej
+
+   Źródło treści: Slajd 4 prezentacji
+
+5. SKILLS.HTML - Umiejętności programowania (Poziom 1)
+   ─────────────────────────────────────────────────────
+   Zawartość:
+   • Języki programowania
+     - JavaScript/TypeScript (zaawansowany)
+     - Java (podstawowy)
+
+   • Frameworki i biblioteki
+     - Frontend: React, Next.js, Redux, Zustand, Tailwind CSS
+     - Backend: Node.js, Express, REST API
+
+   • Bazy danych
+     - PostgreSQL
+     - MongoDB
+
+   • Narzędzia deweloperskie
+     - Kontrola wersji: Git, GitHub
+     - DevOps: Docker, CI/CD, Linux
+     - Narzędzia: VS Code, Figma, Postman, Jira/Trello
+
+   • Doświadczenie: ponad 2 lata
+
+   Źródło treści: Slajd 5 prezentacji
+
+6. PROJECTS.HTML - Projekty i osiągnięcia (Poziom 1)
+   ───────────────────────────────────────────────────
+   Zawartość:
+   • Projekt: UniPrint
+     - Opis: Platforma internetowa z konstruktorami produktów
+     - Zakres: architektura, frontend, backend, deployment
+     - Technologie: React, Next.js, Node.js, PostgreSQL, Docker
+
+   • Projekt: Prospi.ai
+     - Opis: Platforma do zarządzania kampaniami emailowymi
+     - Wkład: Wykresy i wizualizacje danych
+
+   • Osiągnięcia
+     - Sukces UniPrint (samodzielna realizacja)
+     - Wzrost retencji w Prospi.ai o 8% (63% → 71%)
+     - Wkład w projekty open-source
+
+   • Dalsze plany
+     - Nauka Rust i Go
+     - Rozbudowa projektów
+     - Aktywność w open-source
+     - Architektura mikroserwisów
+
+   Źródło treści: Slajd 6 prezentacji
+
+7. CONTACT.HTML - Kontakt (Poziom 1)
+   ─────────────────────────────────────
+   Zawartość:
+   • Dane kontaktowe
+     - Email: mmax@gmail.com
+     - Telefon: +48 484 448 844
+     - GitHub: github.com/MEDOYED
+     - LinkedIn: linkedin.com/in/maksym
+
+   • O czym możemy rozmawiać?
+     - Oferty pracy/projekty freelance
+     - Współpraca open-source
+     - Wymiana doświadczeń
+     - Konsultacje techniczne
+     - Staże i praktyki
+
+   • Platformy społecznościowe
+     - GitHub
+     - LinkedIn
+     - Stack Overflow
+
+   Źródło treści: Slajd 7 prezentacji
+
+═══════════════════════════════════════════════════════════════════════════════
+                            STRUKTURA PLIKÓW
+═══════════════════════════════════════════════════════════════════════════════
+
+project-3-website/
+│
+├── index.html                  # Strona główna (poziom 0)
+│
+├── about.html                  # O mnie (poziom 1)
+├── education.html              # Edukacja (poziom 1)
+├── hobby.html                  # Hobby (poziom 1)
+├── skills.html                 # Umiejętności (poziom 1)
+├── projects.html               # Projekty (poziom 1)
+├── contact.html                # Kontakt (poziom 1)
+│
+├── css/
+│   └── styles.css              # Główny arkusz stylów
+│
+├── js/
+│   └── main.js                 # Skrypty JavaScript
+│
+├── images/
+│   ├── hobby-img.png           # Zdjęcie: łucznictwo
+│   ├── silownia.png            # Zdjęcie: siłownia
+│   └── front-end.png           # Zdjęcie: technologie webowe
+│
+├── sitemap.html                # Wizualna mapa witryny
+└── STRUKTURA-WITRYNY.txt       # Ten plik - tekstowa mapa witryny
+
+═══════════════════════════════════════════════════════════════════════════════
+                        FUNKCJE DOSTĘPNOŚCI (WCAG 2.1)
+═══════════════════════════════════════════════════════════════════════════════
+
+✓ Semantyczny HTML5
+  • Użycie odpowiednich znaczników: <header>, <nav>, <main>, <article>, <footer>
+  • Role ARIA: banner, navigation, main, contentinfo
+
+✓ Nawigacja klawiaturowa
+  • Pełna obsługa klawiatury (Tab, Enter, Escape)
+  • Logiczna kolejność tabulacji
+  • Widoczne wskaźniki fokusa
+
+✓ Skip link
+  • "Przejdź do głównej treści" - ukryty link dla czytników ekranu
+  • Dostępny po naciśnięciu Tab
+
+✓ ARIA atrybuty
+  • aria-label - etykiety dla elementów nawigacji
+  • aria-current="page" - zaznaczenie aktualnej strony
+  • aria-labelledby - powiązanie nagłówków z sekcjami
+  • aria-expanded - stan rozwiniętego menu
+
+✓ Alt teksty dla obrazów
+  • Wszystkie obrazy mają opisowe atrybuty alt
+  • Figcaptions zawierają dodatkowy kontekst
+
+✓ Kontrast kolorów
+  • Współczynnik kontrastu min. 4.5:1 (WCAG AA)
+  • Testowane dla normalnego i dużego tekstu
+  • Wsparcie dla trybu wysokiego kontrastu
+
+✓ Responsywność
+  • Mobile-first design
+  • Breakpoint: 768px
+  • Responsywne menu mobilne z hamburgerem
+
+✓ Fokus wizualny
+  • Outline: 3px solid z wyraźnym kolorem (#ff6b35)
+  • Offset: 2px dla lepszej widoczności
+  • Różne kolory dla różnych stanów
+
+✓ Interaktywne elementy
+  • Wystarczająco duże obszary klikalne (min. 44x44px)
+  • Hover i focus states dla wszystkich interaktywnych elementów
+  • Smooth scroll dla lepszego UX
+
+✓ Wsparcie dla preferencji użytkownika
+  • prefers-reduced-motion - wyłączenie animacji
+  • prefers-contrast: high - wysoki kontrast
+  • Lazy loading obrazów
+
+✓ Struktura nagłówków
+  • Logiczna hierarchia (h1 → h2 → h3)
+  • Jeden h1 na stronę
+  • Nie pomijanie poziomów
+
+✓ Formularze i linki
+  • Opisowe teksty linków (nie "kliknij tutaj")
+  • target="_blank" z rel="noopener noreferrer"
+  • Visible focus states
+
+✓ JavaScript
+  • Progressive enhancement
+  • Witryna działa bez JavaScript
+  • Graceful degradation
+
+═══════════════════════════════════════════════════════════════════════════════
+                         TECHNOLOGIE I STANDARDY
+═══════════════════════════════════════════════════════════════════════════════
+
+• HTML5 - Semantyczny markup zgodny ze standardami W3C
+• CSS3 - Grid, Flexbox, Custom Properties
+• JavaScript ES6+ - Vanilla JS bez zewnętrznych bibliotek
+• Responsive Web Design - Mobile-first approach
+• WCAG 2.1 Level AA - Standardy dostępności
+• Cross-browser compatibility - Chrome, Firefox, Safari, Edge
+
+═══════════════════════════════════════════════════════════════════════════════
+                            NAWIGACJA MIĘDZY STRONAMI
+═══════════════════════════════════════════════════════════════════════════════
+
+Każda strona zawiera:
+• Menu główne w nagłówku (sticky)
+• Przyciski nawigacji "Poprzednia" / "Następna" na dole strony
+• Link powrotny do strony głównej w stopce
+• Breadcrumbs w formie aktywnego linku w menu (aria-current="page")
+
+Kolejność nawigacji:
+index.html → about.html → education.html → hobby.html → skills.html →
+projects.html → contact.html → (powrót do index.html)
+
+═══════════════════════════════════════════════════════════════════════════════
+
+Koniec dokumentu
+Data utworzenia: 2025-12-17
+Autor: Maksym Mokriakov
