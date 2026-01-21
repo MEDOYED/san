@@ -3,342 +3,227 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mapa strony portfolio Maksyma Mokriakova - pełna struktura nawigacji">
     <title>Mapa Witryny - Maksym Mokriakov Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f5f5f5;
+        .sitemap-container {
+            max-width: 800px;
+            margin: 2rem auto;
             padding: 2rem;
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
             background: white;
-            padding: 2rem;
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
 
-        h1 {
+        .sitemap-container h1 {
             color: #0066cc;
-            text-align: center;
             margin-bottom: 1rem;
-            font-size: 2.5rem;
         }
 
-        .subtitle {
-            text-align: center;
-            color: #666;
-            margin-bottom: 3rem;
-        }
-
-        .sitemap {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 2rem;
-        }
-
-        .level {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-        }
-
-        .level-label {
-            background: #0066cc;
-            color: white;
-            padding: 0.5rem 1.5rem;
-            border-radius: 20px;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            font-size: 0.9rem;
-        }
-
-        .pages {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            width: 100%;
-            max-width: 1200px;
-        }
-
-        .page-box {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            position: relative;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .page-box:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
-        }
-
-        .page-box.home {
-            background: linear-gradient(135deg, #0066cc 0%, #004c99 100%);
-            grid-column: 1 / -1;
-            max-width: 400px;
-            margin: 0 auto;
-        }
-
-        .page-title {
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .page-file {
-            font-size: 0.85rem;
-            opacity: 0.9;
-            font-family: 'Courier New', monospace;
-            margin-bottom: 0.75rem;
-        }
-
-        .page-desc {
-            font-size: 0.9rem;
-            opacity: 0.95;
-            line-height: 1.5;
-        }
-
-        .connector {
-            width: 2px;
-            height: 40px;
-            background: linear-gradient(to bottom, #0066cc, transparent);
-            margin: 0.5rem auto;
-        }
-
-        .connections {
-            position: relative;
-            width: 100%;
-            height: 60px;
-            margin: -1rem 0;
-        }
-
-        .connection-line {
-            position: absolute;
-            background: #0066cc;
-            opacity: 0.3;
-        }
-
-        .legend {
-            margin-top: 3rem;
-            padding: 1.5rem;
+        .sitemap-intro {
+            margin-bottom: 2rem;
+            padding: 1rem;
             background: #f8f9fa;
-            border-radius: 8px;
             border-left: 4px solid #0066cc;
+            border-radius: 4px;
         }
 
-        .legend h2 {
-            color: #0066cc;
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-        }
-
-        .legend ul {
-            list-style: none;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-        }
-
-        .legend li {
-            padding-left: 1.5rem;
-            position: relative;
-        }
-
-        .legend li:before {
-            content: "→";
-            position: absolute;
-            left: 0;
-            color: #0066cc;
-            font-weight: bold;
-        }
-
-        .features {
-            margin-top: 2rem;
-            padding: 1.5rem;
-            background: #e8f4f8;
-            border-radius: 8px;
-        }
-
-        .features h3 {
-            color: #0066cc;
-            margin-bottom: 1rem;
-        }
-
-        .features ul {
+        .sitemap-list {
             list-style: none;
             padding-left: 0;
         }
 
-        .features li {
-            padding: 0.5rem 0;
-            padding-left: 1.5rem;
-            position: relative;
+        .sitemap-list li {
+            margin: 0.5rem 0;
         }
 
-        .features li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #28a745;
-            font-weight: bold;
+        .sitemap-list a {
+            color: #0066cc;
+            text-decoration: none;
+            padding: 0.5rem;
+            display: block;
+            border-radius: 4px;
+            transition: background-color 0.2s;
         }
 
-        @media print {
-            body {
-                background: white;
-            }
-
-            .page-box:hover {
-                transform: none;
-            }
+        .sitemap-list a:hover,
+        .sitemap-list a:focus {
+            background-color: #e8f4f8;
+            text-decoration: underline;
         }
 
-        @media (max-width: 768px) {
-            .pages {
-                grid-template-columns: 1fr;
-            }
+        .sitemap-list > li {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-top: 1.5rem;
+        }
 
-            h1 {
-                font-size: 1.8rem;
-            }
+        .sitemap-list > li > a {
+            background: linear-gradient(135deg, #0066cc 0%, #004c99 100%);
+            color: white;
+            padding: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .sitemap-list > li > a:hover,
+        .sitemap-list > li > a:focus {
+            background: linear-gradient(135deg, #004c99 0%, #003366 100%);
+        }
+
+        .sitemap-list ul {
+            list-style: none;
+            padding-left: 2rem;
+            margin-top: 0.5rem;
+        }
+
+        .sitemap-list ul li {
+            font-weight: normal;
+            font-size: 1rem;
+            margin: 0.3rem 0;
+        }
+
+        .sitemap-list .page-description {
+            font-size: 0.9rem;
+            color: #666;
+            font-weight: normal;
+            display: block;
+            margin-top: 0.25rem;
+        }
+
+        .back-link {
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .back-link a {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: #0066cc;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.2s;
+        }
+
+        .back-link a:hover,
+        .back-link a:focus {
+            background: #004c99;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Schemat Blokowy Witryny</h1>
-        <p class="subtitle">Portfolio Maksyma Mokriakova - Struktura Nawigacji</p>
+    <a href="#main-content" class="skip-link">Przejdź do głównej treści</a>
 
-        <div class="sitemap">
-            <!-- Level 0: Home Page -->
-            <div class="level">
-                <div class="level-label">POZIOM 0 - Strona Główna</div>
-                <div class="pages">
-                    <div class="page-box home">
-                        <div class="page-title">🏠 Strona Główna</div>
-                        <div class="page-file">index.html</div>
-                        <div class="page-desc">
-                            Strona tytułowa z danymi osobowymi, zdjęciem autora i interaktywnym menu prowadzącym do wszystkich podstron.
-                        </div>
-                    </div>
-                </div>
+    <header role="banner">
+        <nav role="navigation" aria-label="Główna nawigacja">
+            <button id="menu-toggle" aria-expanded="false" aria-controls="main-nav" class="menu-toggle">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="sr-only">Menu</span>
+            </button>
+            <ul id="main-nav" class="nav-menu">
+                <li><a href="index.html">Strona główna</a></li>
+                <li><a href="about.html">O mnie</a></li>
+                <li><a href="education.html">Edukacja</a></li>
+                <li><a href="hobby.html">Hobby</a></li>
+                <li><a href="skills.html">Umiejętności</a></li>
+                <li><a href="projects.html">Projekty</a></li>
+                <li><a href="contact.html">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content" role="main">
+        <div class="sitemap-container">
+            <h1>Mapa Witryny</h1>
+
+            <div class="sitemap-intro">
+                <p><strong>Ta strona zawiera pełną strukturę nawigacji portfolio Maksyma Mokriakova.</strong></p>
+                <p>Poniżej znajdziesz hierarchiczną listę wszystkich dostępnych stron wraz z ich opisami.</p>
             </div>
 
-            <div class="connector"></div>
+            <nav aria-label="Mapa witryny">
+                <ul class="sitemap-list">
+                    <li>
+                        <a href="index.html">Strona Główna (index.html)</a>
+                        <span class="page-description">Strona tytułowa zawierająca dane osobowe, zdjęcie autora i szybkie linki do wszystkich podstron portfolio</span>
+                        
+                        <ul>
+                            <li>
+                                <a href="about.html">O mnie (about.html)</a>
+                                <span class="page-description">Informacje o autorze, jego pasjach, zainteresowaniach programowaniem i technologiami webowymi</span>
+                            </li>
+                            
+                            <li>
+                                <a href="education.html">Edukacja (education.html)</a>
+                                <span class="page-description">Ścieżka edukacyjna: kolegium technologiczne w Łomży, studia informatyczne na SAN, rozwój kompetencji technicznych</span>
+                            </li>
+                            
+                            <li>
+                                <a href="hobby.html">Hobby (hobby.html)</a>
+                                <span class="page-description">Zainteresowania poza programowaniem: łucznictwo na dystansach 30 i 60 metrów, regularne treningi siłowe, równowaga między pracą umysłową a fizyczną</span>
+                            </li>
+                            
+                            <li>
+                                <a href="skills.html">Umiejętności (skills.html)</a>
+                                <span class="page-description">Technologie i narzędzia: języki programowania (JavaScript, Python, C++), frameworki (React, Node.js), bazy danych, systemy kontroli wersji</span>
+                            </li>
+                            
+                            <li>
+                                <a href="projects.html">Projekty (projects.html)</a>
+                                <span class="page-description">Zrealizowane projekty: UniPrint (system zarządzania drukowaniem), Prospi.ai (platforma AI), osiągnięcia i plany rozwoju zawodowego</span>
+                            </li>
+                            
+                            <li>
+                                <a href="contact.html">Kontakt (contact.html)</a>
+                                <span class="page-description">Dane kontaktowe: email, telefon, linki do profili GitHub i LinkedIn, możliwości współpracy</span>
+                            </li>
+                            
+                            <li>
+                                <a href="sitemap.html" aria-current="page">Mapa Witryny (sitemap.html)</a>
+                                <span class="page-description">Ta strona - pełna hierarchiczna struktura nawigacji portfolio</span>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
 
-            <!-- Level 1: Content Pages -->
-            <div class="level">
-                <div class="level-label">POZIOM 1 - Strony Treści</div>
-                <div class="pages">
-                    <div class="page-box">
-                        <div class="page-title">👤 O mnie</div>
-                        <div class="page-file">about.html</div>
-                        <div class="page-desc">
-                            Podstawowe informacje, pasje i zainteresowania programowaniem oraz technologiami webowymi.
-                        </div>
-                    </div>
+            <section aria-labelledby="additional-info">
+                <h2 id="additional-info">Dodatkowe Informacje</h2>
+                
+                <h3>Technologie użyte w witrynie:</h3>
+                <ul>
+                    <li><strong>HTML5</strong> - semantyczny markup zgodny ze standardami W3C</li>
+                    <li><strong>CSS3</strong> - nowoczesne stylowanie z CSS Grid i Flexbox</li>
+                    <li><strong>JavaScript ES6+</strong> - interaktywność i responsywne menu</li>
+                    <li><strong>WCAG 2.1</strong> - zgodność ze standardami dostępności cyfrowej</li>
+                </ul>
 
-                    <div class="page-box">
-                        <div class="page-title">🎓 Edukacja</div>
-                        <div class="page-file">education.html</div>
-                        <div class="page-desc">
-                            Ścieżka edukacyjna: kolegium technologiczne, studia informatyczne, rozwój kompetencji.
-                        </div>
-                    </div>
+                <h3>Funkcje dostępności:</h3>
+                <ul>
+                    <li>Nawigacja klawiaturowa (Tab, Enter, Escape)</li>
+                    <li>Skip link do głównej treści</li>
+                    <li>ARIA atrybuty dla technologii asystujących</li>
+                    <li>Teksty alternatywne dla wszystkich obrazów</li>
+                    <li>Opisowe podpisy figcaption dla lepszego kontekstu</li>
+                    <li>Kontrast kolorów zgodny z WCAG AA (min. 4.5:1)</li>
+                    <li>Responsywny design dla wszystkich urządzeń</li>
+                    <li>Semantyczny HTML5 (header, nav, main, article, footer)</li>
+                </ul>
+            </section>
 
-                    <div class="page-box">
-                        <div class="page-title">🎯 Hobby</div>
-                        <div class="page-file">hobby.html</div>
-                        <div class="page-desc">
-                            Zainteresowania poza programowaniem: łucznictwo i treningi siłowe, równowaga w życiu.
-                        </div>
-                    </div>
-
-                    <div class="page-box">
-                        <div class="page-title">💻 Umiejętności</div>
-                        <div class="page-file">skills.html</div>
-                        <div class="page-desc">
-                            Języki programowania, frameworki, bazy danych, narzędzia deweloperskie i doświadczenie.
-                        </div>
-                    </div>
-
-                    <div class="page-box">
-                        <div class="page-title">🚀 Projekty</div>
-                        <div class="page-file">projects.html</div>
-                        <div class="page-desc">
-                            Realizacje (UniPrint, Prospi.ai), osiągnięcia i plany rozwoju zawodowego.
-                        </div>
-                    </div>
-
-                    <div class="page-box">
-                        <div class="page-title">📧 Kontakt</div>
-                        <div class="page-file">contact.html</div>
-                        <div class="page-desc">
-                            Dane kontaktowe, email, telefon, linki do GitHub i LinkedIn, możliwości współpracy.
-                        </div>
-                    </div>
-                </div>
+            <div class="back-link">
+                <a href="index.html">← Wróć do strony głównej</a>
             </div>
         </div>
+    </main>
 
-        <div class="legend">
-            <h2>Struktura Plików Witryny</h2>
-            <ul>
-                <li><strong>index.html</strong> - Strona główna (poziom 0)</li>
-                <li><strong>about.html</strong> - O mnie (poziom 1)</li>
-                <li><strong>education.html</strong> - Edukacja (poziom 1)</li>
-                <li><strong>hobby.html</strong> - Hobby (poziom 1)</li>
-                <li><strong>skills.html</strong> - Umiejętności (poziom 1)</li>
-                <li><strong>projects.html</strong> - Projekty (poziom 1)</li>
-                <li><strong>contact.html</strong> - Kontakt (poziom 1)</li>
-                <li><strong>css/styles.css</strong> - Arkusz stylów</li>
-                <li><strong>js/main.js</strong> - Skrypty JavaScript</li>
-                <li><strong>images/</strong> - Folder ze zdjęciami</li>
-            </ul>
-        </div>
+    <footer role="contentinfo">
+        <p>&copy; 2025 Maksym Mokriakov. Projekt 3 - Projektowanie Uniwersalne.</p>
+    </footer>
 
-        <div class="features">
-            <h3>Funkcje Dostępności (WCAG 2.1)</h3>
-            <ul>
-                <li><strong>Nawigacja klawiaturowa</strong> - Pełna obsługa za pomocą klawiatury (Tab, Enter, Escape)</li>
-                <li><strong>Skip link</strong> - Przycisk "Przejdź do głównej treści" dla czytników ekranu</li>
-                <li><strong>ARIA atrybuty</strong> - Semantyczne znaczniki dla technologii asystujących</li>
-                <li><strong>Kontrast kolorów</strong> - Zgodność z WCAG AA (min. 4.5:1)</li>
-                <li><strong>Responsywność</strong> - Dostosowanie do różnych rozmiarów ekranów</li>
-                <li><strong>Alt teksty</strong> - Opisy wszystkich obrazów dla czytników ekranu</li>
-                <li><strong>Fokus wizualny</strong> - Wyraźne wskaźniki fokusa dla nawigacji klawiaturowej</li>
-                <li><strong>Semantyczny HTML</strong> - Użycie odpowiednich znaczników (header, nav, main, article, footer)</li>
-                <li><strong>Interaktywne menu</strong> - Responsywne menu mobilne z animacjami</li>
-                <li><strong>Wsparcie dla preferencji użytkownika</strong> - Reduced motion, high contrast</li>
-            </ul>
-        </div>
-
-        <div class="features">
-            <h3>Technologie i Standardy</h3>
-            <ul>
-                <li><strong>HTML5</strong> - Semantyczny markup zgodny ze standardami W3C</li>
-                <li><strong>CSS3</strong> - Nowoczesne stylowanie z CSS Grid i Flexbox</li>
-                <li><strong>JavaScript ES6+</strong> - Interaktywność i funkcjonalność</li>
-                <li><strong>Responsive Web Design</strong> - Mobile-first approach</li>
-                <li><strong>Progressive Enhancement</strong> - Witryna działa bez JavaScript</li>
-                <li><strong>Cross-browser Compatibility</strong> - Wsparcie dla wszystkich nowoczesnych przeglądarek</li>
-            </ul>
-        </div>
-    </div>
+    <script src="js/main.js"></script>
 </body>
 </html>
