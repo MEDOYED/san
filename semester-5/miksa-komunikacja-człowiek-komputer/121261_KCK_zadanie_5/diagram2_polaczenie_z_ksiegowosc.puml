@@ -1,0 +1,55 @@
+@startuml
+title Diagram 2: Połączenie z Księgowością (Z weryfikacją tożsamości)
+
+actor "Student" as Caller
+participant "System IVR" as IVR
+participant "Menu Główne" as Menu
+participant "Moduł Weryfikacji" as Verification
+participant "Baza Danych" as Database
+participant "Księgowość" as Accounting
+
+Caller -> IVR: Dzwoni do centrali
+activate IVR
+
+IVR -> Caller: "Dzień dobry. Witamy w Społecznej\nAkademii Nauk. Good morning. Welcome\nto the University of Social Sciences.\nProszę wybrać język: Polski - powiedzieć 'Polski',\nEnglish - say 'English'"
+Caller -> IVR: "Polski"
+
+IVR -> Menu: Wybór języka PL
+activate Menu
+
+Menu -> Caller: "Proszę powiedzieć, z którym działem\nchce się Pan/Pani połączyć."
+Caller -> Menu: "Księgowość"
+
+Menu -> Verification: Wymaga weryfikacji
+activate Verification
+
+Verification -> Caller: "Połączenie z Księgowością wymaga\nweryfikacji tożsamości. Proszę powiedzieć:\n'PESEL' aby podać numer PESEL lub\n'Data urodzenia' aby podać datę urodzenia."
+Caller -> Verification: "PESEL"
+
+Verification -> Caller: "Proszę powoli podyktować\nnumer PESEL, cyfra po cyfrze."
+Caller -> Verification: "9 5 0 1 1 5 1 2 3 4 5"
+
+Verification -> Caller: "Powtarzam: dziewięć, pięć, zero, jeden,\njedna, pięć, jeden, dwa, trzy, cztery, pięć.\nCzy jest poprawnie? Proszę powiedzieć\n'Tak' lub 'Nie'."
+Caller -> Verification: "Tak"
+
+Verification -> Database: Sprawdzenie PESEL
+activate Database
+Database -> Verification: PESEL poprawny
+deactivate Database
+
+Verification -> Caller: "Weryfikacja zakończona pomyślnie.\nŁączę z Księgowością. Proszę czekać."
+Verification -> Accounting: Nawiązanie połączenia
+deactivate Verification
+activate Accounting
+
+Accounting -> Caller: Rozmowa z pracownikiem
+Caller -> Accounting: Rozmowa
+
+Accounting -> Caller: Zakończenie rozmowy
+deactivate Accounting
+
+Caller -> IVR: Rozłącza się
+deactivate Menu
+deactivate IVR
+
+@enduml

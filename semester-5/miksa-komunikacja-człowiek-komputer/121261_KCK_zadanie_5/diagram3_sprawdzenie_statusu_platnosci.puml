@@ -1,0 +1,57 @@
+@startuml
+title Diagram 3: Sprawdzenie statusu płatności (Z weryfikacją - przypadek rozszerzający)
+
+actor "Student" as Caller
+participant "System IVR" as IVR
+participant "Menu Główne" as Menu
+participant "Moduł Weryfikacji" as Verification
+participant "Baza Danych" as Database
+
+Caller -> IVR: Dzwoni do centrali
+activate IVR
+
+IVR -> Caller: "Good morning. Welcome to the University\nof Social Sciences. Please choose language:\nSay 'Polish' for Polski or 'English' for English."
+Caller -> IVR: "English"
+
+IVR -> Menu: Wybór języka EN
+activate Menu
+
+Menu -> Caller: "Please say which service you need:\nDean's Office, Recruitment, Library,\nIT Support, Accounting, or Payment Status."
+Caller -> Menu: "Payment Status"
+
+Menu -> Verification: Wymaga weryfikacji
+activate Verification
+
+Verification -> Caller: "Checking payment status requires\nidentity verification. Please say:\n'PESEL' to provide PESEL number or\n'Date of birth' to provide birth date."
+Caller -> Verification: "Date of birth"
+
+Verification -> Caller: "Please say your date of birth\nin format: day, month, year.\nFor example: fifteen, January, nineteen ninety-five."
+Caller -> Verification: "Twenty, March, Two thousand"
+
+Verification -> Caller: "Let me confirm: March 20th, 2000.\nIs this correct? Please say 'Yes' or 'No'."
+Caller -> Verification: "Yes"
+
+Verification -> Database: Sprawdzenie daty urodzenia
+activate Database
+Database -> Verification: Data poprawna, zwrot informacji
+deactivate Database
+
+Verification -> Caller: "Verification successful. Your payment\nstatus: Tuition for Winter semester 2025/2026\npaid on December 15th, 2025. Next payment\ndue: March 31st, 2026. Is there anything\nelse I can help you with?"
+deactivate Verification
+
+Caller -> Menu: "No, thank you"
+
+Menu -> Caller: "Thank you for calling. Have a nice day."
+Caller -> IVR: Rozłącza się
+deactivate Menu
+deactivate IVR
+
+note right of Verification
+  Przypadek rozszerzający:
+  - Weryfikacja przez datę urodzenia
+  - Automatyczna informacja (bez łączenia)
+  - Język angielski
+  - Obsługa błędów weryfikacji
+end note
+
+@enduml

@@ -1,0 +1,62 @@
+@startuml
+title Diagram Rozszerzający: Obsługa błędów weryfikacji
+
+actor "Student" as Caller
+participant "System IVR" as IVR
+participant "Moduł Weryfikacji" as Verification
+participant "Baza Danych" as Database
+
+Caller -> IVR: Próba połączenia z Księgowością
+activate IVR
+IVR -> Verification: Rozpoczęcie weryfikacji
+activate Verification
+
+Verification -> Caller: "Proszę podyktować numer PESEL."
+Caller -> Verification: "9 5 0 1... (niewyraźnie)"
+
+Verification -> Verification: Nie rozpoznano wszystkich cyfr
+
+Verification -> Caller: "Przepraszam, nie zrozumiałem.\nProszę podyktować ponownie,\nwolno i wyraźnie."
+Caller -> Verification: "9 5 0 1 1 5 1 2 3 4 5"
+
+Verification -> Caller: "Potwierdzam: 95011512345.\nCzy poprawnie?"
+Caller -> Verification: "Tak"
+
+Verification -> Database: Sprawdzenie PESEL
+activate Database
+Database -> Verification: PESEL niepoprawny w bazie
+deactivate Database
+
+Verification -> Caller: "Przepraszam, nie mogłem zweryfikować\nPańskiej tożsamości. Czy chce Pan/Pani\nspróbować ponownie używając daty urodzenia?"
+
+alt Student wybiera ponowną próbę
+    Caller -> Verification: "Tak"
+    Verification -> Caller: "Proszę podać datę urodzenia\nw formacie: dzień, miesiąc, rok."
+    Caller -> Verification: "Piętnaście, styczeń,\ntysiąc dziewięćset dziewięćdziesiąty piąty"
+    
+    Verification -> Database: Sprawdzenie daty
+    activate Database
+    Database -> Verification: Data poprawna
+    deactivate Database
+    
+    Verification -> Caller: "Weryfikacja pomyślna.\nŁączę z Księgowością."
+    
+else Student rezygnuje
+    Caller -> Verification: "Nie"
+    Verification -> Caller: "Rozumiem. Może Pan/Pani również\nprzyjść osobiście do Księgowości\nlub wysłać email na: accounting@san.edu.pl.\nCzy mogę w czymś jeszcze pomóc?"
+    Caller -> Verification: "Nie, dziękuję"
+    deactivate Verification
+end
+
+deactivate IVR
+
+note right of Verification
+  Zasady obsługi błędów:
+  - Uprzejme komunikaty
+  - Maksymalnie 2-3 próby
+  - Alternatywne metody weryfikacji
+  - Informacja o innych kanałach kontaktu
+  - Kontekst zachowany między próbami
+end note
+
+@enduml

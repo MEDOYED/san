@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KCK Lab 7 - Programowanie zdarzeniowe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Zmiana kolorów - Programowanie zdarzeniowe</h1>
+        <p class="subtitle">Event-driven programming z wykorzystaniem JavaScript</p>
+        
+        <div class="controls-panel">
+            <h2>Wybierz kolor:</h2>
+            
+            <div class="color-options">
+                <div class="color-option">
+                    <input type="radio" id="red" name="color" value="#e74c3c">
+                    <label for="red">
+                        <span class="color-preview" style="background-color: #e74c3c;"></span>
+                        Czerwony
+                    </label>
+                </div>
+                
+                <div class="color-option">
+                    <input type="radio" id="blue" name="color" value="#3498db">
+                    <label for="blue">
+                        <span class="color-preview" style="background-color: #3498db;"></span>
+                        Niebieski
+                    </label>
+                </div>
+                
+                <div class="color-option">
+                    <input type="radio" id="green" name="color" value="#2ecc71">
+                    <label for="green">
+                        <span class="color-preview" style="background-color: #2ecc71;"></span>
+                        Zielony
+                    </label>
+                </div>
+                
+                <div class="color-option">
+                    <input type="radio" id="purple" name="color" value="#9b59b6">
+                    <label for="purple">
+                        <span class="color-preview" style="background-color: #9b59b6;"></span>
+                        Fioletowy
+                    </label>
+                </div>
+                
+                <div class="color-option">
+                    <input type="radio" id="orange" name="color" value="#e67e22">
+                    <label for="orange">
+                        <span class="color-preview" style="background-color: #e67e22;"></span>
+                        Pomarańczowy
+                    </label>
+                </div>
+                
+                <div class="color-option">
+                    <input type="radio" id="yellow" name="color" value="#f1c40f">
+                    <label for="yellow">
+                        <span class="color-preview" style="background-color: #f1c40f;"></span>
+                        Żółty
+                    </label>
+                </div>
+            </div>
+            
+            <div class="buttons">
+                <button id="applyBtn" class="btn btn-primary">Zastosuj kolor</button>
+                <button id="resetBtn" class="btn btn-secondary">Reset</button>
+            </div>
+            
+            <div class="color-picker-section">
+                <h3>Lub wybierz własny kolor:</h3>
+                <input type="color" id="customColor" value="#1abc9c">
+                <button id="applyCustomBtn" class="btn btn-primary">Zastosuj własny</button>
+            </div>
+        </div>
+        
+        <div class="info-panel">
+            <h3>Informacje:</h3>
+            <p><strong>Aktualny kolor:</strong> <span id="currentColor">#34495e</span></p>
+            <p><strong>Liczba zmian:</strong> <span id="changeCount">0</span></p>
+            <p><strong>Ostatnia akcja:</strong> <span id="lastAction">Brak</span></p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>KCK Laboratorium 7 - Wojciech Miksa | Event-driven programming</p>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
