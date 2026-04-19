@@ -40,13 +40,64 @@ const reverseAlphabet = Object.fromEntries(
 
 console.log(reverseAlphabet);
 
+const mod = (n, m) => ((n % m) + m) % m;
+
+const modInverse = (a, m) => {
+  a = mod(a, m);
+  for (let x = 1; x < m; x++) {
+    if (mod(a * x, m) === 1) return x;
+  }
+  return null;
+};
+
+const decryptAffine = (text, a, b) => {
+  const aInv = modInverse(a, 26);
+  if (aInv === null) return null;
+
+  const chars = text.toLowerCase().split("");
+  const result = [];
+
+  for (let i = 0; i < chars.length; i++) {
+    const y = alphabet[chars[i]];
+    if (y === undefined) {
+      result.push(" ");
+      continue;
+    }
+    const x = mod(aInv * (y - b), 26);
+    result.push(reverseAlphabet[x]);
+  }
+
+  return result.join("");
+};
+
+const scoreText = (text) => {
+  const common = "etaoinshrdlu";
+  let score = 0;
+  for (let i = 0; i < text.length; i++) {
+    if (common.includes(text[i])) score += 1;
+  }
+  return score;
+};
+
+const getFrequencies = (text) => {
+  const freq = {};
+  for (const ch of text.toLowerCase()) {
+    if (alphabet[ch] === undefined) continue;
+    freq[ch] = (freq[ch] || 0) + 1;
+  }
+  return Object.entries(freq)
+    .sort((a, b) => b[1] - a[1])
+    .map(([letter]) => letter);
+};
+
 rl.question(
   `
   Яку програму хочеш: 
 
   1 зашифровка афінічна
   2 розшифровка афініча
-  3 криптоаналіза
+  3 brute force
+  4 metoda statystyczna
   `,
   (programNumber) => {
     rl.question("Введіть ваше ім'я: ", (name) => {
@@ -146,6 +197,68 @@ rl.question(
             }
 
             console.log("Рошрифроване повідомлення: ", encryptedLettersArr.join(""));
+          } else if (programNumber === "3") {
+            // криптоаналіз brute force
+
+            const candidates = [];
+            const possibleA = [1, 3, 5, 7, 9, 11, 15, 17, 19, 21, 23, 25];
+
+            for (let i = 0; i < possibleA.length; i++) {
+              const aCandidate = possibleA[i];
+              for (let bCandidate = 0; bCandidate < 26; bCandidate++) {
+                const decrypted = decryptAffine(name, aCandidate, bCandidate);
+                if (!decrypted) continue;
+                const score = scoreText(decrypted);
+                candidates.push({ a: aCandidate, b: bCandidate, score, text: decrypted });
+              }
+            }
+
+            candidates.sort((a, b) => b.score - a.score);
+
+            console.log("Brute Force (top 5):");
+            for (let i = 0; i < candidates.length; i++) {
+              const item = candidates[i];
+              console.log(`#${i + 1} a=${item.a}, b=${item.b} -> ${item.text}`);
+            }
+          } else if (programNumber === "4") {
+            // криптоаналіз metoda statystyczna
+
+            const cipherFreq = getFrequencies(name);
+            const expected = ["e", "t", "a", "o", "n", "i", "r", "s", "h", "d", "l", "u"];
+
+            const candidates = [];
+
+            for (let i = 0; i < Math.min(5, cipherFreq.length); i++) {
+              for (let j = i + 1; j < Math.min(6, cipherFreq.length); j++) {
+                const y1 = alphabet[cipherFreq[i]];
+                const y2 = alphabet[cipherFreq[j]];
+
+                for (let p = 0; p < Math.min(6, expected.length); p++) {
+                  for (let q = p + 1; q < Math.min(6, expected.length); q++) {
+                    const x1 = alphabet[expected[p]];
+                    const x2 = alphabet[expected[q]];
+                    const diffX = mod(x1 - x2, 26);
+                    const invDiffX = modInverse(diffX, 26);
+                    if (invDiffX === null) continue;
+                    const aCandidate = mod((y1 - y2) * invDiffX, 26);
+                    if (modInverse(aCandidate, 26) === null) continue;
+                    const bCandidate = mod(y1 - aCandidate * x1, 26);
+                    const decrypted = decryptAffine(name, aCandidate, bCandidate);
+                    if (!decrypted) continue;
+                    const score = scoreText(decrypted);
+                    candidates.push({ a: aCandidate, b: bCandidate, score, text: decrypted });
+                  }
+                }
+              }
+            }
+
+            candidates.sort((a, b) => b.score - a.score);
+
+            console.log("Metoda statystyczna (top 5):");
+            for (let i = 0; i < Math.min(5, candidates.length); i++) {
+              const item = candidates[i];
+              console.log(`#${i + 1} a=${item.a}, b=${item.b} -> ${item.text}`);
+            }
           }
         });
       });
