@@ -50,25 +50,28 @@ rl.question(
   `,
   (programNumber) => {
     rl.question("Введіть ваше ім'я: ", (name) => {
-      console.log(`Ви ввели: ${name}`);
+      // console.log(`Ви ввели: ${name}`);
 
       rl.question("Введіть ключ a:", (a) => {
         rl.question("Введіть ключ b:", (b) => {
+          // console.log(`Ви ввели: a: ${a}, b: ${b}`);
+
           let splitFullName = name.toLowerCase().split("");
-          console.log(`Ви ввели: a: ${a}, b: ${b}`);
-          console.log(splitFullName);
+          // console.log(splitFullName);
 
           if (programNumber === "1") {
             // зашифровка
 
+            const encryptedLettersArr = [];
+
             for (let i = 0; i < splitFullName.length; i++) {
-              console.log(i + ": " + splitFullName[i]);
+              // console.log(i + ": " + splitFullName[i]);
 
               let alphabetLetterNumber = alphabet[splitFullName[i]];
-              console.log("alphabetLetterNumber: ", alphabetLetterNumber);
+              // console.log("alphabetLetterNumber: ", alphabetLetterNumber);
 
               let encryptedNumberLetter = a * alphabetLetterNumber + 5;
-              console.log("encryptedNumberLetter: ", encryptedNumberLetter);
+              // console.log("encryptedNumberLetter: ", encryptedNumberLetter);
 
               if (encryptedNumberLetter > 26) {
                 encryptedNumberLetter = encryptedNumberLetter - 26;
@@ -83,16 +86,27 @@ rl.question(
               }
 
               let encryptedLetter = reverseAlphabet[encryptedNumberLetter];
-              console.log(encryptedLetter);
+
+              if (!encryptedLetter) {
+                // console.log("");
+                encryptedLettersArr.push(" ");
+              } else {
+                // console.log(encryptedLetter);
+                encryptedLettersArr.push(encryptedLetter);
+              }
             }
+
+            console.log("зашифроване повідомлення: ", encryptedLettersArr.join(""));
           } else if (programNumber === "2") {
             // розшифровка
+
+            const encryptedLettersArr = [];
 
             for (let i = 0; i < splitFullName.length; i++) {
               console.log(`${i}: ${splitFullName[i]}`);
 
               let alphabetLetterNumber = alphabet[splitFullName[i]];
-              console.log("alphabetLetterNumber: ", alphabetLetterNumber);
+              // console.log("alphabetLetterNumber: ", alphabetLetterNumber);
 
               // 17 = (3x + 5)
               // alphabetLetterNumber = (a * x) + b
@@ -104,29 +118,34 @@ rl.question(
               let aNum = Number(a);
               let bNum = Number(b);
 
-              if ((alphabetLetterNumber - bNum) % aNum === 0) {
-                encryptedSymbolNumber = (alphabetLetterNumber - bNum) / aNum;
+              if (alphabetLetterNumber === undefined) {
+                // console.log("");
+                encryptedSymbolNumber = "";
               } else {
-                while ((alphabetLetterNumber - bNum) % aNum !== 0) {
-                  // true
-                  alphabetLetterNumber = alphabetLetterNumber + 26;
+                if ((alphabetLetterNumber - bNum) % aNum === 0) {
                   encryptedSymbolNumber = (alphabetLetterNumber - bNum) / aNum;
+                } else {
+                  while ((alphabetLetterNumber - bNum) % aNum !== 0) {
+                    alphabetLetterNumber = alphabetLetterNumber + 26;
+                    encryptedSymbolNumber = (alphabetLetterNumber - bNum) / aNum;
+                  }
                 }
               }
 
-              console.log("encryptedSymbolNumber: ", encryptedSymbolNumber);
+              // console.log("encryptedSymbolNumber: ", encryptedSymbolNumber);
 
               let encryptedSymbol = reverseAlphabet[encryptedSymbolNumber];
-              console.log(encryptedSymbol);
 
-              // if ((encryptedSymbolNumber - b) % a === 0) {
-              //   encryptedSymbolNumber = (encryptedSymbolNumber - b) / a;
-              // } else {
-              //   encryptedSymbolNumber = encryptedSymbolNumber + 26
-              // }
-
-              // console.log(encryptedNumberLetter);
+              if (!encryptedSymbol) {
+                // console.log("");
+                encryptedLettersArr.push(" ");
+              } else {
+                // console.log(encryptedSymbol);
+                encryptedLettersArr.push(encryptedSymbol);
+              }
             }
+
+            console.log("Рошрифроване повідомлення: ", encryptedLettersArr.join(""));
           }
         });
       });
@@ -152,4 +171,4 @@ rl.question(
 //  12 = 3x
 //  x = 4  -- елемент 3
 
-//
+// metoda statystyczna i Brute Force
