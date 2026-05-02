@@ -38,7 +38,7 @@ const reverseAlphabet = Object.fromEntries(
   Object.entries(alphabet).map(([letter, number]) => [number, letter])
 );
 
-console.log(reverseAlphabet);
+// console.log(reverseAlphabet);
 
 const mod = (n, m) => ((n % m) + m) % m;
 
@@ -90,21 +90,159 @@ const getFrequencies = (text) => {
     .map(([letter]) => letter);
 };
 
+const normalizeKey = (key) => key.toLowerCase().replace(/[^a-z]/g, "");
+
+const encryptVigenere = (text, key) => {
+  const cleanKey = normalizeKey(key);
+  if (!cleanKey) return "";
+
+  const chars = text.toLowerCase().split("");
+  const result = [];
+  let keyIndex = 0;
+
+  for (let i = 0; i < chars.length; i++) {
+    const ch = chars[i];
+    const x = alphabet[ch];
+    if (x === undefined) {
+      result.push(" ");
+      continue;
+    }
+    const k = alphabet[cleanKey[keyIndex % cleanKey.length]];
+    const y = mod(x + k, 26);
+    result.push(reverseAlphabet[y]);
+    keyIndex += 1;
+  }
+
+  return result.join("");
+};
+
+const decryptVigenere = (text, key) => {
+  const cleanKey = normalizeKey(key);
+  if (!cleanKey) return "";
+
+  const chars = text.toLowerCase().split("");
+  const result = [];
+  let keyIndex = 0;
+
+  for (let i = 0; i < chars.length; i++) {
+    const ch = chars[i];
+    const y = alphabet[ch];
+    if (y === undefined) {
+      result.push(" ");
+      continue;
+    }
+    const k = alphabet[cleanKey[keyIndex % cleanKey.length]];
+    const x = mod(y - k, 26);
+    result.push(reverseAlphabet[x]);
+    keyIndex += 1;
+  }
+
+  return result.join("");
+};
+
+const englishFreq = [
+  0.08167, 0.01492, 0.02782, 0.04253, 0.12702, 0.02228, 0.02015, 0.06094, 0.06966, 0.00153, 0.00772,
+  0.04025, 0.02406, 0.06749, 0.07507, 0.01929, 0.00095, 0.05987, 0.06327, 0.09056, 0.02758, 0.00978,
+  0.0236, 0.0015, 0.01974, 0.00074,
+];
+
+const chiSquare = (counts, length) => {
+  let score = 0;
+  for (let i = 0; i < 26; i++) {
+    const expected = englishFreq[i] * length;
+    const diff = counts[i] - expected;
+    score += (diff * diff) / (expected || 1);
+  }
+  return score;
+};
+
+const getIC = (text) => {
+  const counts = new Array(26).fill(0);
+  let length = 0;
+  for (const ch of text) {
+    const idx = alphabet[ch];
+    if (idx === undefined) continue;
+    counts[idx] += 1;
+    length += 1;
+  }
+  if (length < 2) return 0;
+  let sum = 0;
+  for (let i = 0; i < 26; i++) {
+    sum += counts[i] * (counts[i] - 1);
+  }
+  return sum / (length * (length - 1));
+};
+
+const guessVigenereKey = (cipherText, maxLen = 12) => {
+  const clean = cipherText.toLowerCase().replace(/[^a-z]/g, "");
+  if (!clean) return "";
+
+  let bestLen = 1;
+  let bestScore = 0;
+
+  for (let keyLen = 1; keyLen <= maxLen; keyLen++) {
+    let totalIC = 0;
+    for (let i = 0; i < keyLen; i++) {
+      let slice = "";
+      for (let j = i; j < clean.length; j += keyLen) {
+        slice += clean[j];
+      }
+      totalIC += getIC(slice);
+    }
+    const avgIC = totalIC / keyLen;
+    if (avgIC > bestScore) {
+      bestScore = avgIC;
+      bestLen = keyLen;
+    }
+  }
+
+  let key = "";
+  for (let i = 0; i < bestLen; i++) {
+    const counts = new Array(26).fill(0);
+    let length = 0;
+    for (let j = i; j < clean.length; j += bestLen) {
+      const idx = alphabet[clean[j]];
+      counts[idx] += 1;
+      length += 1;
+    }
+
+    let bestShift = 0;
+    let bestChi = Infinity;
+    for (let shift = 0; shift < 26; shift++) {
+      const shifted = new Array(26).fill(0);
+      for (let k = 0; k < 26; k++) {
+        shifted[k] = counts[mod(k + shift, 26)];
+      }
+      const score = chiSquare(shifted, length);
+      if (score < bestChi) {
+        bestChi = score;
+        bestShift = shift;
+      }
+    }
+    key += reverseAlphabet[bestShift];
+  }
+
+  return key;
+};
+
 rl.question(
   `
-  Яку програму хочеш: 
+  Wybierz, co chcesz: 
 
-  1 зашифровка афінічна
-  2 розшифровка афініча
-  3 brute force
-  4 metoda statystyczna
+  1 Szyfrowanie (Affine)
+  2 Deszyfrowanie (Affine)
+  3 Brute-force (Affine)
+  4 metoda statystyczna - (Kryptoanaliza Affine)
+  5 szyfrowanie Vigenere
+  6 deszyfrowanie Vigenere
+  7 kryptoanaliza Vigenere (bez klucza)
   `,
   (programNumber) => {
-    rl.question("Введіть ваше ім'я: ", (name) => {
+    rl.question("Wpisz swój tekst: ", (name) => {
       // console.log(`Ви ввели: ${name}`);
 
-      rl.question("Введіть ключ a:", (a) => {
-        rl.question("Введіть ключ b:", (b) => {
+      rl.question("Podaj klucz  a:", (a) => {
+        rl.question("Podaj klucz  b:", (b) => {
           // console.log(`Ви ввели: a: ${a}, b: ${b}`);
 
           let splitFullName = name.toLowerCase().split("");
@@ -147,7 +285,7 @@ rl.question(
               }
             }
 
-            console.log("зашифроване повідомлення: ", encryptedLettersArr.join(""));
+            console.log("Tekst zaszyfrowany: ", encryptedLettersArr.join(""));
           } else if (programNumber === "2") {
             // розшифровка
 
@@ -259,6 +397,27 @@ rl.question(
               const item = candidates[i];
               console.log(`#${i + 1} a=${item.a}, b=${item.b} -> ${item.text}`);
             }
+          } else if (programNumber === "5") {
+            // szyfrowanie Vigenere
+
+            rl.question("Введіть ключ Vigenere: ", (key) => {
+              const encrypted = encryptVigenere(name, key);
+              console.log("зашифроване повідомлення: ", encrypted);
+            });
+          } else if (programNumber === "6") {
+            // deszyfrowanie Vigenere
+
+            rl.question("Введіть ключ Vigenere: ", (key) => {
+              const decrypted = decryptVigenere(name, key);
+              console.log("Рошрифроване повідомлення: ", decrypted);
+            });
+          } else if (programNumber === "7") {
+            // kryptoanaliza Vigenere (bez klucza)
+
+            const key = guessVigenereKey(name, 12);
+            const decrypted = decryptVigenere(name, key);
+            console.log("Znaleziony klucz: ", key);
+            console.log("Рошрифроване повідомлення: ", decrypted);
           }
         });
       });
