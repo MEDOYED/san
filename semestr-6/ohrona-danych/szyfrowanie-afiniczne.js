@@ -285,3 +285,6 @@ rl.question(
 //  x = 4  -- елемент 3
 
 // metoda statystyczna i Brute Force
+
+// szyfr wizynera
+// lamanie szyfra wizynera bez klucza
